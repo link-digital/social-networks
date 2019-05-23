@@ -15,11 +15,23 @@ window.Vue = require('vue');
  *
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
-
+ 
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('comments-edit-component', require('./components/comments/EditComponent.vue').default);
+Vue.component('comments-create-component', require('./components/comments/CreateComponent.vue').default);
+
+Vue.component('followers-edit-component', require('./components/followers/EditComponent.vue').default);
+Vue.component('followers-create-component', require('./components/followers/CreateComponent.vue').default);
+
+Vue.component('posts-edit-component', require('./components/posts/EditComponent.vue').default);
+Vue.component('posts-create-component', require('./components/posts/CreateComponent.vue').default);
+
+Vue.component('reactions-edit-component', require('./components/reactions/EditComponent.vue').default);
+Vue.component('reactions-create-component', require('./components/reactions/CreateComponent.vue').default);
+
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
