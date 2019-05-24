@@ -18,10 +18,16 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/posts/import','PostController@import')->name('posts.import');
+Route::get('/comments/import','CommentController@import')->name('comments.import');
+Route::get('/followers/import','FollowerController@import')->name('follower.import');
+
+
 
 Route::resource('followers','FollowerController');
 Route::resource('comments','CommentController');
 Route::resource('posts','PostController');
 Route::resource('reactions','ReactionController');
+
 
 
