@@ -33,15 +33,12 @@
                                 <td>  {{ $follower->no_comments }} </td> 
                                 <td>  {{ App\Follower::where( 'network_follower_id',$follower->network_follower_id )->first()->name }} </td>
                                 <td>  -- </td>
-                                
                                 <td>  -- </td>
-                                
                                 <td>  -- </td>
                                 <td>  -- </td>
                                 <td>  {{ $follower->no_comments * 2 }} </td>
                                 <td>  <a target='_blank' href="https://www.facebook.com/profile.php?id={{ $follower->network_follower_id }}"> View Profile </a> </td>
                                 <td> <button type="button" class="btn btn-danger">Delte</button> </td>
-
                             </tr>
                         @endforeach
                         </tbody>
