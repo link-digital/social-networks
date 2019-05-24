@@ -39,7 +39,7 @@ class CommentsPoints extends Command
      */
     public function handle()
     {
-        $comments = Comment::all();
+        $comments = Comment::whereNull('points')->take(10000)->get();
         $key_words = array(
             'TE AMO SELECCIÓN',
             'MÁS UNIDOS QUE NUNCA',

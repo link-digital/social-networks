@@ -39,7 +39,7 @@ class ReactionsPoints extends Command
      */
     public function handle()
     {
-        $reactions = Reaction::all();
+        $reactions = Reaction::whereNull('points')->take(10000)->get();
         $conditions = [
             'LIKE' => 2,
             'ANGRY' => -5,
