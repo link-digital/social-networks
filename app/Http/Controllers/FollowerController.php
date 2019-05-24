@@ -18,9 +18,10 @@ class FollowerController extends Controller
     public function index()
     {
 
-        $followers = Follower::all();
+        $followers = Follower::paginate(15);
         
         return view('followers.index', compact('followers'));
+
     }
 
     /**

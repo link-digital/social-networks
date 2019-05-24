@@ -15,7 +15,8 @@
                     @endif
                     <table class="table"> 
                         <thead class="thead-dark">
-                            <th>Points</th>
+                            <th>Pos</th>
+                            <th>No. Comments in posts</th>
                             <th>ID</th>
                             <th>Name</th>
                             <th>Link</th>
@@ -28,14 +29,17 @@
                         <tbody>
                         @foreach ( $followers as $key => $follower )
                             <tr>
+                                <td>  {{ $key + 1 }}</td>
                                 <td>  {{ $follower->no_comments }} </td> 
                                 <td>  {{ $follower->network_follower_id }} </td>
                                 <td>  {{ App\Follower::where( 'network_follower_id',$follower->network_follower_id )->first()->name }} </td>
-                                <td>  NULL </td>
-                                <td>  NULL </td>
-                                <td>  NULL </td>
-                                <td>  NULL </td>
-                                <td>  NULL </td>
+                                <td>  -- </td>
+                                
+                                <td>  -- </td>
+                                
+                                <td>  -- </td>
+                                <td>  -- </td>
+                                <td>  {{ $follower->no_comments * 2 }} </td>
                                 <td> <button type="button" class="btn btn-danger">Delte</button> </td>
                             </tr>
                         @endforeach

@@ -89,6 +89,8 @@
                     <a href="/comments">View Facebook Comments</a>
                     <a href="/followers">View Facebook Followers</a>
                     <a href="/reactions">View Facebook Reactions</a>
+                    <a href="/followers/ranking/Facebook">View Facebook Ranking</a>
+
                     {{-- <a href="https://nova.laravel.com">Nova</a>
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a> --}}

@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Facebook Followers</div>
+                <div class="card-header">Followers</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -32,15 +32,17 @@
                                 <td>  {{$follower->network_id}} </td>
                                 <td>  {{$follower->name}} </td>
                                 <td>  {{$follower->link}} </td>
-                                <td>  NULL </td>
-                                <td>  NULL </td>
-                                <td>  NULL </td>
-                                <td>  NULL </td>
-                                <td> <button type="button" class="btn btn-danger">Delte</button> </td>
+                                <td>  -- </td>
+                                <td>  -- </td>
+                                <td>  -- </td>
+                                <td>  -- </td>
+                                <td> <button type="button" class="btn btn-danger">Delete</button> </td>
                             </tr>
                         @endforeach
                         </tbody>
                     </table> 
+                    {{ $followers->links() }}
+
                 </div>
             </div>
         </div>

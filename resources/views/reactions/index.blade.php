@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Facebook Reactions</div>
+                <div class="card-header">Reactions</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -26,15 +26,17 @@
                         @foreach ( $reactions as $key => $reaction )
                             <tr>
                                 <td>  {{$reaction->id}} </td> 
-                                <td>  {{$reaction->post_id}} </td>
-                                <td>  {{$reaction->follower_id}} </td>
+                                <td>  {{$reaction->link}} </td>
+                                <td>  {{$reaction->network_post_id}} </td>
                                 <td>  {{$reaction->type}} </td>
                                 <td>  {{$reaction->points}} </td>
-                                <td> <button type="button" class="btn btn-danger">Delte</button> </td>
+                                <td> <button type="button" class="btn btn-danger">Delete</button> </td>
                             </tr>
                         @endforeach
                         </tbody>
                     </table> 
+                    {{ $reactions->links() }}
+
                 </div>
             </div>
         </div>
