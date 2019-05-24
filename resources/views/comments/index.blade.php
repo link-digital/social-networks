@@ -33,7 +33,7 @@
                                 <td>  {{$comment->message}} </td>
                                 <td>  {{$comment->likes}} </td>
                                 <td>  {{$comment->comments}} </td>
-                                <td>  -- </td>
+                                <td>  {{$comment->points}} </td>
                                 <td> <button type="button" class="btn btn-danger">Delete</button> </td>
                             </tr>
                         @endforeach
