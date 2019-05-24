@@ -20,7 +20,10 @@
                             <th>Message</th>
                             <th>Likes</th>
                             <th>No. Comments</th>
-                            <th>Points</th>
+                            <th>C. Points</th>
+                            <th>P. Likes</th>
+                            <th>P. Keywords</th>
+                            <th>P. Total</th>
                             <th>Actions</th>
                         </thead>
                         <tbody>
@@ -34,6 +37,10 @@
                                 <td>  {{$comment->likes}} </td>
                                 <td>  {{$comment->comments}} </td>
                                 <td>  {{$comment->points}} </td>
+                                
+                                <td>  {{$comment->points_likes}} </td>
+                                <td>  {{$comment->points_keywords}} </td>
+                                <td>  {{$comment->points_total}} </td>
                                 <td> <button type="button" class="btn btn-danger">Delete</button> </td>
                             </tr>
                         @endforeach
