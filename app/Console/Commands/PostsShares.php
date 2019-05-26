@@ -45,7 +45,7 @@ class PostsShares extends Command
             $this->info(' '. $result);
             if($result == '[88] Rate limit exceeded'){
                 exit;
-            }elseif( $result ){
+            }elseif( $result === true ){
                 $post->get_shares = 1;
                 $post->save();
             }else{
