@@ -4,11 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use App\Tweet;
+use App\Comment;
+use App\Follower;
+
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Storage;
-
+use PHPHtmlParser\Dom;
+ 
 
 class PostController extends Controller
 {
@@ -127,6 +131,19 @@ class PostController extends Controller
         $tweet = new Tweet($id);
         dd($tweet);
 
+    }
+
+    /**
+     * import file csv 
+     *
+     * @param  \App\Post  $post
+     * @return \Illuminate\Http\Response
+     */
+    public function parseComments(Post $post)
+    {   
+        
+        $post->parseComments();
+        
     }
 
 

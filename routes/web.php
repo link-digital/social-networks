@@ -19,6 +19,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/posts/import','PostController@import')->name('posts.import');
+Route::get('/posts/parse/{post}','PostController@parseComments')->name('posts.parseComments');
+
 Route::get('/comments/import','CommentController@import')->name('comments.import');
 Route::get('/followers/import','FollowerController@import')->name('follower.import');
 Route::get('/followers/ranking','FollowerController@ranking')->name('follower.ranking');

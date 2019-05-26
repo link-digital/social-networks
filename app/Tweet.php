@@ -8,8 +8,9 @@ use Twitter;
 class Tweet
 {
  
-    function __construct($id_tweet){
+    function __construct($id_tweet, $reTweets = true){
         $this->id_tweet = $id_tweet;
+        $this->reTweets = $reTweets;
         $this->getTweetInfo();
     }   
 
@@ -19,7 +20,8 @@ class Tweet
     public function getTweetInfo(){
 
         $this->tweet = Twitter::getTweet($this->id_tweet);
-        $this->getReTweets();
+        if($this->reTweets)
+            $this->getReTweets();
 
     }
 

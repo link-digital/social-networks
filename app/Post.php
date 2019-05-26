@@ -5,6 +5,12 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\Follower;
 use App\Share;
+use App\Tweet;
+use App\Comment;
+
+use PHPHtmlParser\Dom;
+
+
 
 
 class Post extends Model
@@ -123,5 +129,93 @@ class Post extends Model
         return true;
     }
 
+
+     /**
+     * Set the user's first name.
+     *
+     * @param  string  $value
+     * @return void
+     */
+    public function parseComments(){
+
+        try {
+            $dom = new Dom;
+            $dom->loadFromUrl($this->link);
+            
+            $ThreadedConversation = $dom->find('#descendants li.ThreadedConversation' );
+            $ThreadedConversationLone = $dom->find('#descendants li.ThreadedConversation--loneTweet' );
+            
+            $ThreadedConversationReplies = [];
+            $ThreadedConversationLoneReplies = [];
+            
+            foreach ($ThreadedConversation as $content) {
+                $comment_id = $content->find('li')->getAttribute('data-item-id');
+                $tweet = new Tweet($comment_id, false);
+                
+                $findOrCreate = [
+                    'network_follower_id' => $tweet->tweet->user->id,
+                    'network_id' => 'Twitter',
+                    'name' => $tweet->tweet->user->name,
+                    'link' => 'https://twitter.com/'.$tweet->tweet->user->screen_name,
+                    'nickname' => $tweet->tweet->user->screen_name
+                ];
+                
+                $follower = Follower::firstOrCreate($findOrCreate);
+                $commentfindOrCreate = [
+                    'network_id' => 'Twitter',
+                    'network_comment_id' => $tweet->id_tweet,
+                    'network_follower_id' => $follower->id,
+                    'comment_date' => date("Y-m-d h:m:s", strtotime($tweet->tweet->created_at)),
+                    'post_id' => $this->id,
+                    'follower_id' => $follower->id,
+                    'link' => 'https://twitter.com/'.$follower->nickname.'/status/'.$tweet->id_tweet,
+                    'message' => $tweet->tweet->text,
+                    'likes' => NULL,
+                    'comments' => NULL,
+                    'points' => NULL
+                ];
+                $commentfindOrCreate = Comment::firstOrCreate($commentfindOrCreate);
+                $this->get_parse = 1;
+                $this->save();
+            }
+    
+            foreach ($ThreadedConversationLone as $content)
+                {
+                    $comment_id = $content->find('li')->getAttribute('data-item-id');
+                $tweet = new Tweet($comment_id, false);
+                
+                $findOrCreate = [
+                    'network_follower_id' => $tweet->tweet->user->id,
+                    'network_id' => 'Twitter',
+                    'name' => $tweet->tweet->user->name,
+                    'link' => 'https://twitter.com/'.$tweet->tweet->user->screen_name,
+                    'nickname' => $tweet->tweet->user->screen_name
+                ];
+                
+                $follower = Follower::firstOrCreate($findOrCreate);
+                $commentfindOrCreate = [
+                    'network_id' => 'Twitter',
+                    'network_comment_id' => $tweet->id_tweet,
+                    'network_follower_id' => $follower->id,
+                    'comment_date' => date("Y-m-d h:m:s", strtotime($tweet->tweet->created_at)),
+                    'post_id' => $this->id,
+                    'follower_id' => $follower->id,
+                    'link' => 'https://twitter.com/'.$follower->nickname.'/status/'.$tweet->id_tweet,
+                    'message' => $tweet->tweet->text,
+                    'likes' => NULL,
+                    'comments' => NULL,
+                    'points' => NULL
+                ];
+                $commentfindOrCreate = Comment::firstOrCreate($commentfindOrCreate);
+                $this->get_parse = 1;
+                $this->save();
+            }
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
+
+        return true;
+       
+    }
 
 }
