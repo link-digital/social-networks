@@ -8,5 +8,5 @@ class Follower extends Model
 {
     //
 
-    protected $fillable = array('network_follower_id','network_id','name','link');
+    protected $fillable = array('network_follower_id','network_id','name','link','nickname');
 }

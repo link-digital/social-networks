@@ -24,7 +24,7 @@ Route::get('/followers/import','FollowerController@import')->name('follower.impo
 Route::get('/followers/ranking','FollowerController@ranking')->name('follower.ranking');
 Route::get('/followers/ranking/{network_id}','FollowerController@ranking')->name('follower.ranking');
 
-
+Route::get('/twitter/tweet/{id}','PostController@tweet')->name('twitter.tweet');
 
 
 Route::resource('followers','FollowerController');

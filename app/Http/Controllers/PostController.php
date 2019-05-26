@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Tweet;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Storage;
+
 
 class PostController extends Controller
 {
@@ -111,4 +114,20 @@ class PostController extends Controller
         
         
     }
+
+    /**
+     * import file csv 
+     *
+     * @param  \App\Post  $post
+     * @return \Illuminate\Http\Response
+     */
+    public function tweet($id)
+    {
+        
+        $tweet = new Tweet($id);
+        dd($tweet);
+
+    }
+
+
 }

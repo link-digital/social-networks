@@ -13,7 +13,7 @@ class PostsImport extends Command
      *
      * @var string
      */
-    protected $signature = 'command:name';
+    protected $signature = 'posts:import';
 
     /**
      * The console command description.
@@ -41,21 +41,23 @@ class PostsImport extends Command
     {
         $fields = array('network_post_id', 'link','message','type','active','post_date','shares','likes','comments','download_likes','download_comments' );
 
-        $contents = Storage::disk('local')->get('/public/PostsFacebook.csv');
+        $contents = Storage::disk('local')->get('/public/PostTwitterFull.csv');
 
         $contents = explode(PHP_EOL,$contents); 
 
         foreach ($contents as $key => $line) {
+            $this->info($key. ' ');
             if($key != 0){
                 $line_contents = explode("\t", $line);
                 foreach ($fields as $index => $field) {
                     if(isset($line_contents[$index])){
+                        
                         $fields_to_save[$field] = $line_contents[$index]; 
                     }else{
-                        return 'finish';
+                        $this->info('finish');
                     }
                 }
-                $fields_to_save['network_id'] = 'Facebook';
+                $fields_to_save['network_id'] = 'Twitter';
                 $post = Post::create( $fields_to_save);
             }
         }
