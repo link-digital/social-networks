@@ -39,7 +39,7 @@ class PostsImport extends Command
      */
     public function handle()
     {
-        $fields = array('network_post_id', 'link','message','type','active','post_date','shares','likes','comments','download_likes','download_comments' );
+        $fields = array('network_post_id', 'link','message','type','active','post_date','shares', 'comments', 'likes', 'download_likes','download_comments' );
 
         $contents = Storage::disk('local')->get('/public/PostTwitterFull.csv');
 
@@ -48,7 +48,7 @@ class PostsImport extends Command
         foreach ($contents as $key => $line) {
             $this->info($key. ' ');
             if($key != 0){
-                $line_contents = explode("\t", $line);
+                $line_contents = explode("\t", $line); 
                 foreach ($fields as $index => $field) {
                     if(isset($line_contents[$index])){
                         

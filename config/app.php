@@ -161,6 +161,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        
 
         /*
          * Package Service Providers...
@@ -176,6 +177,9 @@ return [
         App\Providers\RouteServiceProvider::class,
         
         Thujohn\Twitter\TwitterServiceProvider::class,
+        Ammadeuss\LaravelHtmlDomParser\ServiceProvider::class,
+
+
 
     ],
 
@@ -228,6 +232,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Twitter' => Thujohn\Twitter\Facades\Twitter::class,
+        'HTMLDomParser' => Ammadeuss\LaravelHtmlDomParser\Facade::class
 
     ],
 
