@@ -21,6 +21,18 @@ class CommentController extends Controller
     }
 
     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function indexNetwork($network)
+    {
+        $comments = Comment::where('network_id', '=', $network)->paginate(15);
+        
+        return view('comments.index', compact('comments'));
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response

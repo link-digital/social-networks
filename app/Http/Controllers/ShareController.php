@@ -14,7 +14,21 @@ class ShareController extends Controller
      */
     public function index()
     {
-        //
+        $shares = Share::paginate(15);
+        
+        return view('shares.index', compact('shares'));
+    }
+
+     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function indexNetwork($network)
+    {
+        $shares = Share::where('network_id', '=', $network)->paginate(15);
+        
+        return view('shares.index', compact('shares'));
     }
 
     /**

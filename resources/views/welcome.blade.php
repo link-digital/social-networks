@@ -85,12 +85,27 @@
                 </div>
 
                 <div class="links">
-                    <a href="/posts">View Facebook Posts</a>
-                    <a href="/comments">View Facebook Comments</a>
-                    <a href="/followers">View Facebook Followers</a>
-                    <a href="/reactions">View Facebook Reactions</a>
-                    <a href="/followers/ranking/Facebook">View Facebook Ranking</a>
-
+                    <div class="links">
+                        <a href="/posts/facebook">View Facebook Posts</a>
+                        <a href="/comments/facebook">View Facebook Comments</a>
+                        <a href="/followers/facebook">View Facebook Followers</a>
+                        <a href="/reactions/facebook">View Facebook Reactions</a>
+                        <a herf="/followers/ranking/Facebook">View Facebook Ranking</a>
+                    </div>
+                    <div class="links">
+                        <a href="/posts/twitter">View Twitter Posts</a>
+                        <a href="/comments/twitter">View Twitter Comments</a>
+                        <a href="/followers/twitter">View Twitter Followers</a>
+                        <a href="/reactions/twitter">View Twitter Reactions</a>
+                        <a href="/followers/ranking/twitter">View Twitter Ranking</a>
+                    </div>
+                    <div class="links">
+                        <a href="/posts/intagram">View Intagram Posts</a>
+                        <a href="/comments/intagram">View Intagram Comments</a>
+                        <a href="/followers/intagram">View Intagram Followers</a>
+                        <a href="/reactions/intagram">View Intagram Reactions</a>
+                        <a href="/followers/ranking/intagram">View Intagram Ranking</a>
+                    </div>
                     {{-- <a href="https://nova.laravel.com">Nova</a>
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a> --}}

@@ -19,6 +19,18 @@ class ReactionController extends Controller
         return view('reactions.index', compact('reactions'));
     }
 
+     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function indexNetwork($network)
+    {
+        $comments = Reaction::where('network_id', '=', $network)->paginate(15);
+        
+        return view('reactions.index', compact('reactions'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

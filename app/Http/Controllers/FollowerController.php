@@ -25,6 +25,20 @@ class FollowerController extends Controller
     }
 
     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function indexNetwork($network)
+    {
+
+        $followers = Follower::where('network_id', '=', $network)->paginate(15);
+        
+        return view('followers.index', compact('followers'));
+
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
