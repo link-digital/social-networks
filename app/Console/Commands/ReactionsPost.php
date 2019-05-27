@@ -53,8 +53,9 @@ class ReactionsPost extends Command
                 if($follower){
                     $this->info('  Follower: '. $follower->id );
                     $reaction->follower_id = $follower->id;
+                    $reaction->save();
                 }
-                $reaction->save();
+                
                 
             }else{
                 $this->info(' No post mached');
