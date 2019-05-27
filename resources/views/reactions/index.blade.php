@@ -30,7 +30,7 @@
                                 <td>  {{$reaction->network_post_id}} </td>
                                 <td>  {{$reaction->type}} </td>
                                 <td>  {{$reaction->points}} </td>
-                                <td> <button type="button" class="btn btn-danger">Delete</button> </td>
+                                <td> <button type="button" class="btn btn-info">Details</button> </td>
                             </tr>
                         @endforeach
                         </tbody>

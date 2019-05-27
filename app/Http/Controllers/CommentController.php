@@ -62,7 +62,6 @@ class CommentController extends Controller
      */
     public function show(Comment $comment)
     {
-        //
     }
 
     /**
@@ -72,8 +71,10 @@ class CommentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Comment $comment)
+    
     {
-        return view('comment.edit', compact($comment));
+           
+        return view('comments.edit', compact('comment'));
         
     }
 

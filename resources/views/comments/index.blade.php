@@ -41,7 +41,7 @@
                                 <td>  {{$comment->points_likes}} </td>
                                 <td>  {{$comment->points_keywords}} </td>
                                 <td>  {{$comment->points_total}} </td>
-                                <td> <button type="button" class="btn btn-danger">Delete</button> </td>
+                                <td> <a href="/comments/{{$comment->id}}/edit"><button type="button" class="btn btn-info">Details</button></a> </td>
                             </tr>
                         @endforeach
                         </tbody>

@@ -34,6 +34,8 @@ Route::get('/followers/{network_id}','FollowerController@indexNetwork')->name('f
 Route::get('/followers/ranking/{network_id}','FollowerController@ranking')->name('follower.ranking');
 
 Route::get('/posts/{network_id}','PostController@indexNetwork')->name('posts.indexNetwork');
+Route::get('/reactions/{network_id}','ReactionController@indexNetwork')->name('reactions.indexNetwork');
+
 
 Route::get('/twitter/tweet/{id}','PostController@tweet')->name('twitter.tweet');
 

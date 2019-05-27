@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Followers</div>
+                <div class="card-header">Shares</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -16,32 +16,26 @@
                     <table class="table"> 
                         <thead class="thead-dark">
                             <th>ID</th>
-                            <th>Network</th>
-                            <th>Name</th>
-                            <th>Link</th>
-                            <th>T. Likes</th>
-                            <th>T. Comments</th>
-                            <th>T. P Likes</th>
-                            <th>T. P Comments</th>
+                            <th>Post ID</th>
+                            <th>Followr ID</th>
+                            <th>Type</th>
+                            <th>Points</th>
                             <th>Actions</th>
                         </thead>
                         <tbody>
-                        @foreach ( $followers as $key => $follower )
+                        @foreach ( $shares as $key => $share )
                             <tr>
-                                <td>  {{$follower->id}} </td> 
-                                <td>  {{$follower->network_id}} </td>
-                                <td>  {{$follower->name}} </td>
-                                <td>  {{$follower->link}} </td>
-                                <td>  -- </td>
-                                <td>  -- </td>
-                                <td>  -- </td>
-                                <td>  -- </td>
+                                <td>  {{$share->id}} </td> 
+                                <td>  {{$share->link}} </td>
+                                <td>  {{$share->network_post_id}} </td>
+                                <td>  {{$share->type}} </td>
+                                <td>  {{$share->points}} </td>
                                 <td> <button type="button" class="btn btn-info">Details</button> </td>
                             </tr>
                         @endforeach
                         </tbody>
                     </table> 
-                    {{ $followers->links() }}
+                    {{ $shares->links() }}
 
                 </div>
             </div>

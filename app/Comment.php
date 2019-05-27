@@ -30,4 +30,22 @@ class Comment extends Model
     {
         $this->attributes['likes'] = (int)$value;
     }
+
+    /**
+     * Set the user's first name.
+     *
+     * @param  string  $value
+     * @return void
+     */
+    public function post()
+    {
+        return $this->belongsTo('App\Post');
+    }
+
+    public function follower()
+    {
+        return $this->belongsTo('App\Follower');
+    }
+
+
 }

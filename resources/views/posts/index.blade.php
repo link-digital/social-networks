@@ -32,7 +32,7 @@
                                 <td>  {{$post->shares}} </td>
                                 <td>  {{$post->likes}} </td>
                                 <td>  {{$post->comments}} </td>
-                                <td> <button type="button" class="btn btn-danger">Delete</button> </td>
+                                <td> <button type="button" class="btn btn-info">Details</button> </td>
                             </tr>
                         @endforeach
                         </tbody>
