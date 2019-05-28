@@ -41,7 +41,7 @@ class ReactionsImport extends Command
     {
         $fields = array('network_post_id','link','network_follower_id','type');
 
-        $contents = Storage::disk('local')->get('/public/ReactionsFacebook3.csv');
+        $contents = Storage::disk('local')->get('/public/ReactionsInstagram.csv');
 
         $contents = explode(PHP_EOL,$contents); 
 
