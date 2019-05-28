@@ -56,7 +56,7 @@ class ReactionsImport extends Command
                         $this->info('finish');
                     }
                 }
-                $fields_to_save['network_id'] = 'Facebook';
+                $fields_to_save['network_id'] = 'Instagram';
                 try {
                     $post = Reaction::create($fields_to_save);
                 } catch (\Exception $e) {

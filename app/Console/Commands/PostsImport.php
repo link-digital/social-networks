@@ -41,7 +41,7 @@ class PostsImport extends Command
     {
         $fields = array('network_post_id', 'link','message','type','active','post_date','shares', 'comments', 'likes', 'download_likes','download_comments' );
 
-        $contents = Storage::disk('local')->get('/public/PostTwitterFull.csv');
+        $contents = Storage::disk('local')->get('/public/PostInstagram.csv');
 
         $contents = explode(PHP_EOL,$contents); 
 
@@ -57,7 +57,9 @@ class PostsImport extends Command
                         $this->info('finish');
                     }
                 }
-                $fields_to_save['network_id'] = 'Twitter';
+                $fields_to_save['network_id'] = 'Instagram';
+                $fields_to_save['network_id'] = 'CervezaAguila';
+
                 $post = Post::create( $fields_to_save);
             }
         }

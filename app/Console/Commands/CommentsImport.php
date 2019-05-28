@@ -41,7 +41,7 @@ class CommentsImport extends Command
     {
         $fields = array('network_comment_id','comment_date','network_follower_id','name','message','likes','comments','link');
 
-        $contents = Storage::disk('local')->get('/public/CommentsFacebook.csv');
+        $contents = Storage::disk('local')->get('/public/CommentsInstagram.csv');
 
         $contents = explode(PHP_EOL,$contents); 
 
@@ -56,11 +56,11 @@ class CommentsImport extends Command
                         $this->info('finish');
                     }
                 }
-                $fields_to_save['network_id'] = 'Facebook';
+                $fields_to_save['network_id'] = 'Instagram';
                 try {
                     $post = Comment::create($fields_to_save);
                 } catch (\Exception $e) {
-                    $this->info('Process line error '. $key);
+                    $this->info('Process line error '. $key. ' '. $e->getMessage());
                     Storage::disk('local')->append('/public/file.log', json_encode($fields_to_save)."\n");
                 }
                 
