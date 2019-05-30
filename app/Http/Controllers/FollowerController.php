@@ -78,8 +78,11 @@ class FollowerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Follower $follower)
+    
     {
-        return view('followers.edit', compact($follower));
+
+                       
+        return view('followers.edit', compact('follower'));
         
     }
 
