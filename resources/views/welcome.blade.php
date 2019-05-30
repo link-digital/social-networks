@@ -90,7 +90,7 @@
                         <a href="/comments/facebook">View Facebook Comments</a>
                         <a href="/followers/facebook">View Facebook Followers</a>
                         <a href="/reactions/facebook">View Facebook Reactions</a>
-                        <a herf="/followers/ranking/Facebook">View Facebook Ranking</a>
+                        <a href="/followers/ranking/facebook">View Facebook Ranking</a>
                     </div>
                     <div class="links">
                         <a href="/posts/twitter">View Twitter Posts</a>
