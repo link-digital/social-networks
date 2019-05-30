@@ -5,7 +5,10 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Facebook Posts</div>
+                <div class="card-header">Facebook Posts
+                    <br>
+                    Total: {{$count}}
+                </div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -17,6 +20,7 @@
                         <thead class="thead-dark">
                             <th>ID</th>
                             <th>Network</th>
+                            <th>Link</th>
                             <th>Message</th>
                             <th>Shares</th>
                             <th>Likes</th>
@@ -26,8 +30,9 @@
                         <tbody>
                         @foreach ( $posts as $key => $post )
                             <tr>
-                                <td>  {{$post->id}} </td> 
+                                <td>  {{count($post->comments)}} </td> 
                                 <td>  {{$post->network_id}} </td>
+                                <td>  <a href="{{$post->link}}"> ver </a> </td>
                                 <td>  {{$post->message}} </td>
                                 <td>  {{$post->shares}} </td>
                                 <td>  {{$post->likes}} </td>

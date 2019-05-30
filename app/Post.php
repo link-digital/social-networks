@@ -95,6 +95,21 @@ class Post extends Model
      * @param  string  $value
      * @return void
      */
+    public function comments()
+    {
+        $this->belongsTo('App\Comment');
+    }
+
+
+
+
+
+    /**
+     * Set the user's first name.
+     *
+     * @param  string  $value
+     * @return void
+     */
     public function getShares()
     {
 
