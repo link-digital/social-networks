@@ -95,9 +95,9 @@ class Post extends Model
      * @param  string  $value
      * @return void
      */
-    public function comments()
+    public function getComments()
     {
-        $this->belongsTo('App\Comment');
+        return $this->belongsTo('App\Comment','id','post_id');
     }
 
 

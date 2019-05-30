@@ -30,7 +30,7 @@
                         <tbody>
                         @foreach ( $posts as $key => $post )
                             <tr>
-                                <td>  {{count($post->comments)}} </td> 
+                                <td>  {{count($post->getComments)}} </td> 
                                 <td>  {{$post->network_id}} </td>
                                 <td>  <a href="{{$post->link}}"> ver </a> </td>
                                 <td>  {{$post->message}} </td>
