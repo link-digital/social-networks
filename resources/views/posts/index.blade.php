@@ -18,7 +18,7 @@
                     @endif
                     <table class="table"> 
                         <thead class="thead-dark">
-                            <th>No. Comments</th>
+                            <th>ID</th>
                             <th>Network</th>
                             <th>Link</th>
                             <th>Message</th>
@@ -30,7 +30,7 @@
                         <tbody>
                         @foreach ( $posts as $key => $post )
                             <tr>
-                                <td>  {{count($post->getComments)}} </td> 
+                                <td>  {{$post->id}} </td> 
                                 <td>  {{$post->network_id}} </td>
                                 <td>  <a href="{{$post->link}}"> ver </a> </td>
                                 <td>  {{$post->message}} </td>
