@@ -36,7 +36,7 @@
                                 <td>  -- </td>
                                 <td>  -- </td>
                                 <td>  -- </td>
-                                <td> <button type="button" class="btn btn-info">Details</button> </td>
+                                <td> <a href="/followers/{{ $follower->id }}/edit"> <button type="button" class="btn btn-info">Details</button> </a></td>
                             </tr>
                         @endforeach
                         </tbody>

@@ -14,4 +14,13 @@ class Result extends Model
         'follower_points',
         'grant_total'
     ];
+
+
+    /**
+     * Get the follower of the post.
+     */
+    public function follower()
+    {
+        return $this->belongsTo('App\Follower');
+    }
 }

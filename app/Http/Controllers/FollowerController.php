@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Follower;
 use Illuminate\Http\Request;
 use Storage;
+use App\Result;
 
 class FollowerController extends Controller
 {
@@ -118,27 +119,9 @@ class FollowerController extends Controller
     public function ranking($network_id = null)
     {
         
-        $followers = DB::table('comments')
-                        ->select(DB::raw('count(network_follower_id) as no_comments, network_follower_id'))
-                        ->where('network_id','=',$network_id)
-                        ->whereNotNull('network_follower_id')
-                        ->groupBy('network_follower_id')
-                        ->orderBy('no_comments','desc')
-                        ->limit(20)
-                        ->get();
+        $results = Result::orderBy('grant_total', 'DESC')->paginate(10);
 
-        // dd($followers[0]);
-        // foreach($followers as $key => $follower ){
-        //     $follow = Follower::where( 'network_follower_id',$follower->network_follower_id )->get(); 
-        //     if( $follow){
-        //         $followers[$key]['name'] = $follow->name;
-        //     }else{
-        //         $followers[$key]['name'] = null;
-        //     }
-            
-        // }
-        
-        return view('followers.ranking',compact('followers','network_id'));
+        return view('followers.ranking',compact('results','network_id'));
     }
 
      /**

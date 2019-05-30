@@ -15,34 +15,29 @@
                     @endif
                     <table class="table"> 
                         <thead class="thead-dark">
-                            <th>Pos</th>
-                            <th>No. Comments in posts</th>
-                            <th>Name</th>
-                            <th>Link</th>
-                            <th>T. Likes</th>
-                            <th>T. Comments</th>
-                            <th>T. P Likes</th>
-                            <th>T. P Comments</th>
-                            <th>Profile</th>
-                            <th>Actions</th>
+                            <th>Pos</th> 
+                            <th>Follower</th>
+                            <th>Comments Points</th>
+                            <th>Shares Points</th>
+                            <th>Reactions Points</th>
+                            <th>Follower Points</th>
+                            <th>Grant Total</th>
                         </thead>
                         <tbody>
-                        @foreach ( $followers as $key => $follower )
+                        @foreach ( $results as $key => $result )
                             <tr>
-                                <td>  {{ $key + 1 }}</td>
-                                <td>  {{ $follower->no_comments }} </td> 
-                                <td>  {{ App\Follower::where( 'network_follower_id',$follower->network_follower_id )->first()->name }} </td>
-                                <td>  -- </td>
-                                <td>  -- </td>
-                                <td>  -- </td>
-                                <td>  -- </td>
-                                <td>  {{ $follower->no_comments * 2 }} </td>
-                                <td>  <a target='_blank' href="https://www.facebook.com/profile.php?id={{ $follower->network_follower_id }}"> View Profile </a> </td>
-                                <td> <button type="button" class="btn btn-danger">Delte</button> </td>
+                                <th>{{$key }}</th> 
+                                <th>{{$result->follower->name }}</th>
+                                <th>{{$result->comments_points }}</th>
+                                <th>{{$result->share_points }}</th>
+                                <th>{{$result->reactions_points }}</th>
+                                <th>{{$result->follower_points }}</th>
+                                <th>{{$result->grant_total }}</th>
                             </tr>
                         @endforeach
                         </tbody>
                     </table> 
+                    {{ $results->links() }}
                 </div>
             </div>
         </div>
