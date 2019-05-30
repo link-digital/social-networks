@@ -54,6 +54,16 @@ class CommentsPostsRelated extends Command
                         $this->info('Found: '. $post_id);
                         break;
                     
+                    case 'Twitter':
+                        $post_id = $comment->network_comment_id;
+                        $this->info('Found: '. $post_id);
+                        break;
+                    
+                    case 'Instagram':
+                        $post_id = $comment->network_comment_id;
+                        $this->info('Found: '. $post_id);
+                        break;
+                    
                     default:
                         $this->info('Argument network_id not is valid');
                         exit;
