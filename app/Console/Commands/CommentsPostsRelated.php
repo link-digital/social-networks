@@ -42,7 +42,7 @@ class CommentsPostsRelated extends Command
     {
         $network_id = $this->argument('network_id');
 
-        $comments = Comment::where('network_id','=',$network_id)->whereNull('post_id')->limit(1000)->get();
+        $comments = Comment::where('network_id','=',$network_id)->whereNull('post_id')->limit(5000)->get();
 
         if($comments){
 
