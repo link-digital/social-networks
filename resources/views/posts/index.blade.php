@@ -18,7 +18,7 @@
                     @endif
                     <table class="table"> 
                         <thead class="thead-dark">
-                            <th>ID</th>
+                            <th>No. Comments</th>
                             <th>Network</th>
                             <th>Link</th>
                             <th>Message</th>
