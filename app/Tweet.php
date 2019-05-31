@@ -21,8 +21,8 @@ class Tweet
         
         
         $this->tweet = Twitter::getTweet($this->id_tweet);
-        // if($this->reTweets)
-            // $this->getReTweets();
+        if($this->reTweets)
+            $this->getReTweets();
 
     }
 

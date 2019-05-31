@@ -25,6 +25,8 @@
                             <th>Shares</th>
                             <th>Likes</th>
                             <th>Comments</th>
+                            <th>Shares</th>
+                            <th>Comments</th>
                             <th>Actions</th>
                         </thead>
                         <tbody>
@@ -37,6 +39,8 @@
                                 <td>  {{$post->shares}} </td>
                                 <td>  {{$post->likes}} </td>
                                 <td>  {{$post->comments}} </td>
+                                <td>  {{$post->get_shares}} </td>
+                                <td>  {{$post->get_parse}} </td>
                                 <td> <button type="button" class="btn btn-info">Details</button> </td>
                             </tr>
                         @endforeach

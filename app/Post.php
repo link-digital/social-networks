@@ -156,7 +156,7 @@ class Post extends Model
         try {
             $dom = new Dom;
             $dom->loadFromUrl($this->link);
-            print_r($this->link);
+            
             $ThreadedConversation = $dom->find('#descendants li.ThreadedConversation' );
             $ThreadedConversationLone = $dom->find('#descendants li.ThreadedConversation--loneTweet' );
             
@@ -166,7 +166,7 @@ class Post extends Model
             foreach ($ThreadedConversation as $content) {
                 $comment_id = $content->find('li')->getAttribute('data-item-id');
                 $tweet = new Tweet($comment_id, false);
-                print_r($comment_id);
+                
                 $findOrCreate = [
                     'network_follower_id' => $tweet->tweet->user->id,
                     'network_id' => 'Twitter',
