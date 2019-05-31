@@ -40,8 +40,11 @@ class CommetsFollowersRelated extends Command
      * @return mixed
      */
     public function handle()
+
     {
-        $comments = Comment::whereNull('post_id')->take(1000)->get();
+
+        $limit = $this->argument('limit');
+        $comments = Comment::whereNull('post_id')->take($limit)->get();
 
         foreach ( $comments as $key => $comment ) {
             $this->info($comment->id);

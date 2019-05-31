@@ -44,4 +44,43 @@ class Follower extends Model
     {
         return $this->hasMany('App\Share');
     }
+
+
+     /**
+     * Set the user's first name.
+     *
+     * @param  string  $value
+     * @return void
+     */
+    public static function getTotal($network_id = null,$account = null){
+        
+        $count = 'undefined';
+
+        if(!is_null($network_id) && !is_null($account)){
+            $count = Follower::where('network_id','=',$network_id)
+                                ->where('account','=', $account)
+                                ->count();
+        }
+
+        elseif( is_null($network_id) && is_null($account) ){
+
+
+        }
+
+        elseif( is_null($network_id) && !is_null($account) ){
+
+        }
+
+        elseif( !is_null($network_id) && is_null($account) ){
+
+        }
+    
+        
+        return $count;
+
+
+    }
+
 }
+
+

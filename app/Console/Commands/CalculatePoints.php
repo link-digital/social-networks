@@ -52,7 +52,7 @@ class CalculatePoints extends Command
             $total_points_comments = 0;
             $total_points_reactions = 0;
             $total_points_shares = 0;
-            $total_points_followers = 0;
+            $total_points_followers = 100;
             $grant_total = 0;
 
 
