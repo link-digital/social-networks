@@ -18,7 +18,8 @@ class Tweet
 
 
     public function getTweetInfo(){
-
+        
+        
         $this->tweet = Twitter::getTweet($this->id_tweet);
         // if($this->reTweets)
             // $this->getReTweets();
