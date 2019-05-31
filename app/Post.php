@@ -133,6 +133,7 @@ class Post extends Model
                     'network_id' => 'Twitter',
                     'follower_id' => $follower->id,
                     'post_date' => date("Y-m-d h:m:s", strtotime($retweet->created_at)),
+                    'account'   => $this->account
                 ];
                 $share = Share::firstOrCreate($findOrCreate);
             }

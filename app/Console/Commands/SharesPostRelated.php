@@ -13,14 +13,14 @@ class SharesPostRelated extends Command
      *
      * @var string
      */
-    protected $signature = 'shares:post';
+    protected $signature = 'shares:post {limit = 1000}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Busca Shares sin un post relacionado y los relaciona';
 
     /**
      * Create a new command instance.
@@ -40,7 +40,8 @@ class SharesPostRelated extends Command
     public function handle()
     {
         
-        $shares = Share::whereNull('post_id')->take(1000)->get();
+        $limit = $this->argument('limit');
+        $shares = Share::whereNull('post_id')->take($limit)->get();
 
         foreach ( $shares as $key => $share ) {
             $this->info($share->id);

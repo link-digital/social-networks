@@ -13,14 +13,14 @@ class PostsImport extends Command
      *
      * @var string
      */
-    protected $signature = 'posts:import';
+    protected $signature = 'posts:import {network_id} {account} {file_name} ';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Importa post desde un csv';
 
     /**
      * Create a new command instance.
@@ -38,10 +38,16 @@ class PostsImport extends Command
      * @return mixed
      */
     public function handle()
+    
     {
+        $network_id = $this->argument('network_id');
+        $file_name = $this->argument('file_name');
+        $account = $this->argument('account');
+
+
         $fields = array('network_post_id', 'link','message','type','active','post_date','shares', 'comments', 'likes', 'download_likes','download_comments' );
 
-        $contents = Storage::disk('local')->get('/public/PostInstagram.csv');
+        $contents = Storage::disk('local')->get('/public/'.$file_name);
 
         $contents = explode(PHP_EOL,$contents); 
 
@@ -57,10 +63,10 @@ class PostsImport extends Command
                         $this->info('finish');
                     }
                 }
-                $fields_to_save['network_id'] = 'Instagram';
-                $fields_to_save['network_id'] = 'CervezaAguila';
+                $fields_to_save['network_id'] = $network_id;
+                $fields_to_save['account'] = $account;
 
-                $post = Post::create( $fields_to_save);
+                $post = Post::firstOrCreate( $fields_to_save);
             }
         }
     }

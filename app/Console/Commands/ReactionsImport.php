@@ -13,14 +13,14 @@ class ReactionsImport extends Command
      *
      * @var string
      */
-    protected $signature = 'reactions:import';
+    protected $signature = 'reactions:import {network_id} {account} {file_name}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Importa reacciones desde un archivo csv';
 
     /**
      * Create a new command instance.
@@ -39,9 +39,13 @@ class ReactionsImport extends Command
      */
     public function handle()
     {
+        $network_id = $this->argument('network_id');
+        $account = $this->argument('account');
+        $file_name  = $this->argument('file_name');
+     
         $fields = array('network_post_id','link','network_follower_id','type');
 
-        $contents = Storage::disk('local')->get('/public/ReactionsInstagram.csv');
+        $contents = Storage::disk('local')->get('/public/'.$file_name);
 
         $contents = explode(PHP_EOL,$contents); 
 
@@ -56,7 +60,8 @@ class ReactionsImport extends Command
                         $this->info('finish');
                     }
                 }
-                $fields_to_save['network_id'] = 'Instagram';
+                $fields_to_save['network_id'] = $file_name;
+                $fields_to_save['account'] = $account;
                 try {
                     $post = Reaction::create($fields_to_save);
                 } catch (\Exception $e) {

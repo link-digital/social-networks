@@ -15,14 +15,14 @@ class ReactionsPost extends Command
      *
      * @var string
      */
-    protected $signature = 'reactions:post';
+    protected $signature = 'reactions:post {limit = 1000}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'busca reacciones que no tengan un post relacionado y los relaciona';
 
     /**
      * Create a new command instance.
@@ -41,7 +41,8 @@ class ReactionsPost extends Command
      */
     public function handle()
     {
-        $reactions = Reaction::whereNull('post_id')->take(1000)->get();
+        $limit = $this->argument('limit');
+        $reactions = Reaction::whereNull('post_id')->take($limit)->get();
 
         foreach ( $reactions as $key => $reaction ) {
             $this->info($reaction->id);

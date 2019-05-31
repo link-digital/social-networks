@@ -18,6 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/dashboard/{network_id}', 'HomeController@dashboard')->name('home.dasboard');
 Route::get('/posts/import','PostController@import')->name('posts.import');
 Route::get('/posts/parse/{post}','PostController@parseComments')->name('posts.parseComments');
 

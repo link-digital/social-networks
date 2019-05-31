@@ -13,14 +13,16 @@ class CommentsImport extends Command
      *
      * @var string
      */
-    protected $signature = 'comments:import';
+    protected $signature = 'comments:import {network_id} {file_name}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Importar Comentarios';
+    protected $description = 'Importa commentarios desde un archivo csv, necesita dos parametros 
+    {network_id} = "Facebook" 
+    {file_name}  = "file.csv" ';
 
     /**
      * Create a new command instance.
@@ -39,12 +41,18 @@ class CommentsImport extends Command
      */
     public function handle()
     {
+
+        $network_id = $this->argument('network_id');
+        $file_name = $this->argument('file_name');
+        print $network_id;
+        print $file_name;
+        
         $fields = array('network_comment_id','comment_date','network_follower_id','name','message','likes','comments','link');
 
-        $contents = Storage::disk('local')->get('/public/CommentsInstagram.csv');
-
+        $contents = Storage::disk('local')->get('/public/'.$file_name);
+        
         $contents = explode(PHP_EOL,$contents); 
-
+        
         foreach ($contents as $key => $line) {
             if($key != 0){
                 $this->info('Process line '. $key);
@@ -56,7 +64,7 @@ class CommentsImport extends Command
                         $this->info('finish');
                     }
                 }
-                $fields_to_save['network_id'] = 'Instagram';
+                $fields_to_save['network_id'] = $network_id;
                 try {
                     $post = Comment::create($fields_to_save);
                 } catch (\Exception $e) {

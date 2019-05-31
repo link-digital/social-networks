@@ -14,14 +14,15 @@ class CommetsFollowersRelated extends Command
      *
      * @var string
      */
-    protected $signature = 'comments:followers';
+    protected $signature = 'comments:followers {limit = 100}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Busca comentarios que no tengan relacionado un seguidor y lo relaciona
+    {limit = 100};';
 
     /**
      * Create a new command instance.

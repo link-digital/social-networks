@@ -14,14 +14,16 @@ class FollowersImport extends Command
      *
      * @var string
      */
-    protected $signature = 'followers:import';
+    protected $signature = 'followers:import {network_id} {file_name}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Importa Followers';
+    protected $description = 'Importa seguidores desde un archivo csv, necesita dos parametros 
+    {network_id} = "Facebook" 
+    {file_name}  = "file.csv" ';
 
     /**
      * Create a new command instance.
@@ -40,9 +42,12 @@ class FollowersImport extends Command
      */
     public function handle()
     {
+        $network_id = $this->argument('network_id');
+        $file_name  = $this->argument('file_name');
+        
         $fields = array('network_follower_id','name');
 
-        $contents = Storage::disk('local')->get('/public/FollowersFacebook.csv');
+        $contents = Storage::disk('local')->get('/public/'.$file_name);
 
         $contents = explode(PHP_EOL,$contents); 
 
@@ -57,13 +62,14 @@ class FollowersImport extends Command
                         return 'finish';
                     }
                 }
-                $fields_to_save['network_id'] = 'Facebook';
+                $fields_to_save['network_id'] = $network_id;
                 $fields_to_save['nickname'] = $fields_to_save['name'];
 
                 // dd($fields_to_save);
-                if(!Follower::where('network_follower_id',$fields_to_save['network_follower_id'])->first()){
-                    $post = Follower::create($fields_to_save);
-                }
+                $follower = Follower::firstOrCreate($fields_to_save);
+                // if(!Follower::where('network_follower_id',$fields_to_save['network_follower_id'])->first()){
+                //     $post = Follower::create($fields_to_save);
+                // }
                 
             }
         }

@@ -14,14 +14,16 @@ class CommentsPostsRelated extends Command
      *
      * @var string
      */
-    protected $signature = 'comments:posts {network_id}';
+    protected $signature = 'comments:posts {network_id} {limit=5000}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Busca comentarios que no tengan un post relacionado y los relaciona
+    {network_id} = Facebook
+    {limit} = 100';
 
     /**
      * Create a new command instance.
@@ -41,8 +43,10 @@ class CommentsPostsRelated extends Command
     public function handle()
     {
         $network_id = $this->argument('network_id');
+        $limit = $this->argument('limit');
 
-        $comments = Comment::where('network_id','=',$network_id)->whereNull('post_id')->limit(5000)->get();
+
+        $comments = Comment::where('network_id','=',$network_id)->whereNull('post_id')->limit($limit)->get();
 
         if($comments){
 

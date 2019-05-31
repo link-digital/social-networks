@@ -12,14 +12,14 @@ class PostParse extends Command
      *
      * @var string
      */
-    protected $signature = 'posts:parse';
+    protected $signature = 'posts:parse {limit = 500}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Descarga comentarios de un post de twitter y crea el seguidor que realizo el comentario';
 
     /**
      * Create a new command instance.
@@ -38,7 +38,8 @@ class PostParse extends Command
      */
     public function handle()
     {
-        $posts = Post::whereNull('get_parse')->where('comments', '!=', 0 )->where('network_id', '=', 'Twitter')->take(500)->get();
+        $limit = $this->argument('limit');
+        $posts = Post::whereNull('get_parse')->where('comments', '!=', 0 )->where('network_id', '=', 'Twitter')->take($limit)->get();
         foreach ($posts as $key => $post) {
             $this->info($post->id);
             $result = $post->parseComments();

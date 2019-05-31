@@ -13,14 +13,14 @@ class ReactionsPoints extends Command
      *
      * @var string
      */
-    protected $signature = 'reactions:points';
+    protected $signature = 'reactions:points {limit=10000}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Da un valor en puntos a cada reaccion';
 
     /**
      * Create a new command instance.
@@ -39,7 +39,9 @@ class ReactionsPoints extends Command
      */
     public function handle()
     {
-        $reactions = Reaction::whereNull('points')->take(10000)->get();
+        $limit = $this->argument('limit');
+        
+        $reactions = Reaction::whereNull('points')->take($limit)->get();
         $conditions = [
             'LIKE' => 2,
             'ANGRY' => -5,

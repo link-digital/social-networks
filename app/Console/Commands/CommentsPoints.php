@@ -20,7 +20,7 @@ class CommentsPoints extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Calcula puntos por cada comentario';
 
     /**
      * Create a new command instance.

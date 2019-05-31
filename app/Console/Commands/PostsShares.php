@@ -12,14 +12,14 @@ class PostsShares extends Command
      *
      * @var string
      */
-    protected $signature = 'posts:shares';
+    protected $signature = 'posts:shares {limit=500}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Busca post que no hayan sido procesados y procesa los shares';
 
     /**
      * Create a new command instance.
@@ -38,7 +38,9 @@ class PostsShares extends Command
      */
     public function handle()
     {
-        $posts = Post::whereNull('get_shares')->where('network_id', '=', 'Twitter')->take(500)->get();
+        
+        $limit = $this->argument('limit');
+        $posts = Post::whereNull('get_shares')->where('network_id', '=', 'Twitter')->take($limit)->get();
         foreach($posts as $key => $post){
             $this->info($post->id);
             $result = $post->getShares();
