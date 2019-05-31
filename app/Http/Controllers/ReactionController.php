@@ -26,9 +26,11 @@ class ReactionController extends Controller
      */
     public function indexNetwork($network)
     {
+        $count = Reaction::where('network_id', '=', $network)->count();
+        
         $reactions = Reaction::where('network_id', '=', $network)->paginate(15);
         
-        return view('reactions.index', compact('reactions'));
+        return view('reactions.index', compact('reactions','count'));
     }
 
     /**

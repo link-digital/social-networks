@@ -100,11 +100,11 @@
                         <a href="/followers/ranking/twitter">View Twitter Ranking</a>
                     </div>
                     <div class="links">
-                        <a href="/posts/intagram">View Intagram Posts</a>
-                        <a href="/comments/intagram">View Intagram Comments</a>
-                        <a href="/followers/intagram">View Intagram Followers</a>
-                        <a href="/reactions/intagram">View Intagram Reactions</a>
-                        <a href="/followers/ranking/intagram">View Intagram Ranking</a>
+                        <a href="/posts/instagram">View instagram Posts</a>
+                        <a href="/comments/instagram">View instagram Comments</a>
+                        <a href="/followers/instagram">View instagram Followers</a>
+                        <a href="/reactions/instagram">View instagram Reactions</a>
+                        <a href="/followers/ranking/instagram">View Intagram Ranking</a>
                     </div>
                     {{-- <a href="https://nova.laravel.com">Nova</a>
                     <a href="https://forge.laravel.com">Forge</a>

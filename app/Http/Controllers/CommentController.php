@@ -26,10 +26,12 @@ class CommentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function indexNetwork($network)
+    
     {
+        $count = Comment::where('network_id', '=', $network)->count();
         $comments = Comment::where('network_id', '=', $network)->paginate(15);
         
-        return view('comments.index', compact('comments'));
+        return view('comments.index', compact('comments','count'));
     }
 
     /**
