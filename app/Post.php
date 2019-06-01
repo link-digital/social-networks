@@ -276,8 +276,21 @@ class Post extends Model
      * @return void
      */
     public static function getTotalReactions($network_id = null,$account = null){
+
+
+
         
         $count = 'undefined';
+
+        if($network_id == 'Instagram' && !is_null($account)){
+            $count = Reactions::where('network_id','=',$network_id)
+                                ->where('account','=', $account)
+                                ->count();
+
+            return $count;
+        }
+
+
 
         if(!is_null($network_id) && !is_null($account)){
             $count = Post::where('network_id','=',$network_id)
