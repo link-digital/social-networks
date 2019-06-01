@@ -44,8 +44,7 @@ class CommetsFollowersRelated extends Command
     {
 
         $limit = $this->argument('limit');
-        $comments = Comment::whereNull('network_follower_id')->take($limit)->get();
-
+        $comments = Comment::whereNull('follower_id')->take($limit)->get();
         foreach ( $comments as $key => $comment ) {
             $this->info($comment->id);
             $follower = Follower::where('network_follower_id', '=', $comment->network_follower_id )->where('network_id', '=', $comment->network_id)->first();
