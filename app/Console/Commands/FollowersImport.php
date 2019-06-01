@@ -14,7 +14,7 @@ class FollowersImport extends Command
      *
      * @var string
      */
-    protected $signature = 'followers:import {network_id} {file_name}';
+    protected $signature = 'followers:import {network_id} {account} {file_name}';
 
     /**
      * The console command description.
@@ -23,6 +23,7 @@ class FollowersImport extends Command
      */
     protected $description = 'Importa seguidores desde un archivo csv, necesita dos parametros 
     {network_id} = "Facebook" 
+    {account} = "CervezaAguila" 
     {file_name}  = "file.csv" ';
 
     /**
@@ -43,6 +44,7 @@ class FollowersImport extends Command
     public function handle()
     {
         $network_id = $this->argument('network_id');
+        $account = $this->argument('account');
         $file_name  = $this->argument('file_name');
         
         $fields = array('network_follower_id','name');
@@ -64,6 +66,7 @@ class FollowersImport extends Command
                 }
                 $fields_to_save['network_id'] = $network_id;
                 $fields_to_save['nickname'] = $fields_to_save['name'];
+                $fields_to_save['account'] = $account;
 
                 // dd($fields_to_save);
                 $follower = Follower::firstOrCreate($fields_to_save);
