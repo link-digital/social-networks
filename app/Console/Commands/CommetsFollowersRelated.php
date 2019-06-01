@@ -14,7 +14,7 @@ class CommetsFollowersRelated extends Command
      *
      * @var string
      */
-    protected $signature = 'comments:followers {limit = 100}';
+    protected $signature = 'comments:followers {limit=10000}';
 
     /**
      * The console command description.
