@@ -115,7 +115,7 @@
                         </tr>
                         <tr>
                             <td colspan="">Shares sobre post</td>
-                            <td colspan=""></td>
+                            <td colspan="">(+5)</td>
                             <td colspan="">{{ $data->CervezaAguila['shares'] }}</td>
                             <td colspan=""></td>
                             <td colspan="">{{ $data->FCF['shares'] }}</td>
@@ -175,6 +175,13 @@
                             <td colspan="">{{ $data->CervezaAguila['reactions_over_comments'] }}</td>
                             <td colspan="">(+1)</td>
                             <td colspan="">{{ $data->FCF['reactions_over_comments'] }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="">Reacciones sobre comentarios</td>
+                            <td colspan="">(+1)</td>
+                            <td colspan="">{{ $data->CervezaAguila['likes_over_comments'] }}</td>
+                            <td colspan="">(+1)</td>
+                            <td colspan="">{{ $data->FCF['likes_over_comments'] }}</td>
                         </tr>
                         </tbody>
                     </table>
