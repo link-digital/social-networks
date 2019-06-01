@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Laravel</title>
+        <link href="/css/app.css" rel="stylesheet">
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -86,25 +87,31 @@
 
                 <div class="links">
                     <div class="links">
-                        <a href="/posts/facebook">View Facebook Posts</a>
-                        <a href="/comments/facebook">View Facebook Comments</a>
-                        <a href="/followers/facebook">View Facebook Followers</a>
-                        <a href="/reactions/facebook">View Facebook Reactions</a>
-                        <a href="/followers/ranking/facebook">View Facebook Ranking</a>
+                    <ul>
+                        <li><a href="/posts/facebook">View Facebook Posts</a></li>
+                        <li><a href="/comments/facebook">View Facebook Comments</a></li>
+                        <li><a href="/followers/facebook">View Facebook Followers</a></li>
+                        <li><a href="/reactions/facebook">View Facebook Reactions</a></li>
+                        <li><a href="/followers/ranking/facebook">View Facebook Ranking</a></li>
+                    </ul>
                     </div>
                     <div class="links">
-                        <a href="/posts/twitter">View Twitter Posts</a>
-                        <a href="/comments/twitter">View Twitter Comments</a>
-                        <a href="/followers/twitter">View Twitter Followers</a>
-                        <a href="/reactions/twitter">View Twitter Reactions</a>
-                        <a href="/followers/ranking/twitter">View Twitter Ranking</a>
+                    <ul>
+                        <li><a href="/posts/twitter">View Twitter Posts</a></li>
+                        <li><a href="/comments/twitter">View Twitter Comments</a></li>
+                        <li><a href="/followers/twitter">View Twitter Followers</a></li>
+                        <li><a href="/reactions/twitter">View Twitter Reactions</a></li>
+                        <li><a href="/followers/ranking/twitter">View Twitter Ranking</a></li>
+                    </ul>
                     </div>
                     <div class="links">
-                        <a href="/posts/instagram">View instagram Posts</a>
-                        <a href="/comments/instagram">View instagram Comments</a>
-                        <a href="/followers/instagram">View instagram Followers</a>
-                        <a href="/reactions/instagram">View instagram Reactions</a>
-                        <a href="/followers/ranking/instagram">View Intagram Ranking</a>
+                    <ul>
+                        <li><a href="/posts/instagram">View instagram Posts</a></li>
+                        <li><a href="/comments/instagram">View instagram Comments</a></li>
+                        <li><a href="/followers/instagram">View instagram Followers</a></li>
+                        <li><a href="/reactions/instagram">View instagram Reactions</a></li>
+                        <li><a href="/followers/ranking/instagram">View Intagram Ranking</a></li>
+                    </ul>
                     </div>
                     {{-- <a href="https://nova.laravel.com">Nova</a>
                     <a href="https://forge.laravel.com">Forge</a>
