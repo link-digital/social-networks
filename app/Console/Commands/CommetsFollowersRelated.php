@@ -44,21 +44,17 @@ class CommetsFollowersRelated extends Command
     {
 
         $limit = $this->argument('limit');
-        $comments = Comment::whereNull('post_id')->take($limit)->get();
+        $comments = Comment::whereNull('network_follower_id')->take($limit)->get();
 
         foreach ( $comments as $key => $comment ) {
             $this->info($comment->id);
-            $post = Post::where('network_post_id', '=', $comment->network_post_id )->where('network_id', '=', $comment->network_id)->first();
-            if($post){
-                $this->info(' Post: '. $post->id );
-                $comment->post_id = $post->id;
-                $follower = Follower::where('network_follower_id', '=', $comment->network_follower_id )->where('network_id', '=', $comment->network_id)->first();
+            $follower = Follower::where('network_follower_id', '=', $comment->network_follower_id )->where('network_id', '=', $comment->network_id)->first();
+            if($follower){
                 if($follower){
                     $this->info('  Follower: '. $follower->id );
                     $comment->follower_id = $follower->id;
                     $comment->save();
                 }
-                
             }else{
                 $this->info(' No post mach');
                 continue;
