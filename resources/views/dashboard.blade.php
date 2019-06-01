@@ -114,6 +114,13 @@
                             <td colspan="">{{ $data->FCF['reactions_over_posts'] }}</td>
                         </tr>
                         <tr>
+                            <td colspan="">Shares sobre post</td>
+                            <td colspan=""></td>
+                            <td colspan="">{{ $data->CervezaAguila['shares'] }}</td>
+                            <td colspan=""></td>
+                            <td colspan="">{{ $data->FCF['shares'] }}</td>
+                        </tr>
+                        <tr>
                             <td colspan="">Like</td>
                             <td colspan="">(+2)</td>
                             <td colspan=""> {{ $data->CervezaAguila['reactions']['like'] }}</td>

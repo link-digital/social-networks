@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\Comment;
 use App\Reaction;
-use App\share;
+use App\Share;
 use App\Follower;
 
 class HomeController extends Controller
@@ -79,12 +79,16 @@ class HomeController extends Controller
         $no_actives_aguila = Post::getTotalActives($network_id,'CervezaAguila');
         $no_actives_fcf = Post::getTotalActives($network_id,'FCF');
 
+        $no_shares_aguila = Share::getTotal($network_id,'CervezaAguila');
+        $no_shares_fcf = Share::getTotal($network_id,'FCF');
+
         $data = (object)[
             'CervezaAguila' => [
                 'no_posts'  => $no_posts_aguila,
                 'no_post_seleccion' => $no_actives_aguila,
                 'reactions_over_posts' => $no_reactions_over_post_aguila,
                 'user_interactions' => $no_followers_aguila,
+                'shares'    => $no_shares_aguila,
                 'comments'  => $no_comments_aguila,
                 'keywords'  => $no_keywords_aguila,
                 'reactions' => $no_reactions_aguila,
@@ -97,6 +101,7 @@ class HomeController extends Controller
                 'no_post_seleccion' => $no_actives_fcf,
                 'reactions_over_posts' => $no_reactions_over_post_fcf,
                 'user_interactions' => $no_followers_fcf,
+                'shares'    => $no_shares_fcf,
                 'comments'  => $no_comments_fcf,
                 'keywords'  => $no_keywords_fcf,
                 'reactions' => $no_reactions_fcf,
