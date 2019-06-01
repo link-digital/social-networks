@@ -177,7 +177,7 @@
                             <td colspan="">{{ $data->FCF['reactions_over_comments'] }}</td>
                         </tr>
                         <tr>
-                            <td colspan="">Reacciones sobre comentarios</td>
+                            <td colspan="">Likes sobre comentarios</td>
                             <td colspan="">(+1)</td>
                             <td colspan="">{{ $data->CervezaAguila['likes_over_comments'] }}</td>
                             <td colspan="">(+1)</td>
