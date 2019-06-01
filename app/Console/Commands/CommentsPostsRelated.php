@@ -46,7 +46,11 @@ class CommentsPostsRelated extends Command
         $limit = $this->argument('limit');
 
 
-        $comments = Comment::where('network_id','=',$network_id)->whereNull('post_id')->limit($limit)->get();
+        $comments = Comment::where('network_id','=',$network_id)
+                        ->whereNull('post_id')
+                        ->limit($limit)
+                        ->orderBy('updated_at', 'DESC')
+                        ->get();
 
         if($comments){
 
