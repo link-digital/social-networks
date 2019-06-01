@@ -284,7 +284,7 @@ class Post extends Model
 
         if($network_id == 'instagram' && !is_null($account)){
             
-            $count = Reactions::where('network_id','=',$network_id)
+            $count = Reaction::where('network_id','=',$network_id)
                                 ->where('account','=', $account)
                                 ->count();
 
