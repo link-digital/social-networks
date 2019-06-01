@@ -57,7 +57,6 @@ class ReactionsPost extends Command
                     $reaction->save();
                 }
                 
-                
             }else{
                 $this->info(' No post mached');
                 continue;
