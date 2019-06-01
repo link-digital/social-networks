@@ -176,13 +176,13 @@
                             <td colspan="">(+1)</td>
                             <td colspan="">{{ $data->FCF['reactions_over_comments'] }}</td>
                         </tr>
-                        <tr>
+                        {{-- <tr>
                             <td colspan="">Likes sobre comentarios</td>
                             <td colspan="">(+1)</td>
                             <td colspan="">{{ $data->CervezaAguila['likes_over_comments'] }}</td>
                             <td colspan="">(+1)</td>
                             <td colspan="">{{ $data->FCF['likes_over_comments'] }}</td>
-                        </tr>
+                        </tr> --}}
                         </tbody>
                     </table>
                 </div>

@@ -82,8 +82,8 @@ class HomeController extends Controller
         $no_shares_aguila = Share::getTotal($network_id,'CervezaAguila');
         $no_shares_fcf = Share::getTotal($network_id,'FCF');
 
-        $no_likes_over_commets_aguila = Comment::getTotalLikes($network_id,'CervezaAguila');
-        $no_likes_over_commets_fcf    = Comment::getTotalLikes($network_id,'FCF');
+        // $no_likes_over_commets_aguila = Comment::getTotalLikes($network_id,'CervezaAguila');
+        // $no_likes_over_commets_fcf    = Comment::getTotalLikes($network_id,'FCF');
 
         $data = (object)[
             'CervezaAguila' => [
@@ -97,7 +97,7 @@ class HomeController extends Controller
                 'reactions' => $no_reactions_aguila,
                 'comments_over_comments' => $no_comments_over_comments_aguila,
                 'reactions_over_comments' => $no_reactions_over_comments_aguila,
-                'likes_over_comments' => $no_likes_over_commets_aguila,
+                // 'likes_over_comments' => $no_likes_over_commets_aguila,
             ],
 
             'FCF' => [
@@ -111,7 +111,7 @@ class HomeController extends Controller
                 'reactions' => $no_reactions_fcf,
                 'comments_over_comments' => $no_comments_over_comments_fcf,
                 'reactions_over_comments' => $no_reactions_over_comments_fcf,
-                'likes_over_comments' => $no_likes_over_commets_fcf,
+                // 'likes_over_comments' => $no_likes_over_commets_fcf,
             ]
         ];
 
