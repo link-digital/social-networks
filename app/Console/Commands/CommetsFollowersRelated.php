@@ -5,7 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use App\Comment;
 use App\Post;
-
+use App\Follower;
 
 class CommetsFollowersRelated extends Command
 {
