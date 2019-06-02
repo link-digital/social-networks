@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Storage;
 use App\Result;
 
+
 class FollowerController extends Controller
 {
     /**
@@ -117,12 +118,20 @@ class FollowerController extends Controller
      * @param  \App\Follower  $follower
      * @return \Illuminate\Http\Response
      */
-    public function ranking($network_id = null)
+    public function ranking($network_id = null, $account = null)
     {
         
-        $results = Result::orderBy('grant_total', 'DESC')->paginate(10);
+        // $results = Result::orderBy('grant_total', 'DESC')->paginate(10);
+        $results = DB::table('results')
+                        ->join('followers','followers.id','results.follower_id')
+                        ->where('followers.account','=',$account)
+                        ->where('followers.network_id','=',$network_id)
+                        ->orderBy('results.grant_total', 'DESC')
+                        ->paginate(10);
 
-        return view('followers.ranking',compact('results','network_id'));
+        
+
+        return view('followers.ranking',compact('results','network_id','account'));
     }
 
      /**

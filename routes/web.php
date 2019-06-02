@@ -32,7 +32,7 @@ Route::get('/shares/{network_id}','ShareController@indexNetwork')->name('shares.
 Route::get('/followers/import','FollowerController@import')->name('follower.import');
 Route::get('/followers/ranking','FollowerController@ranking')->name('follower.ranking');
 Route::get('/followers/{network_id}','FollowerController@indexNetwork')->name('follower.indexNetwork');
-Route::get('/followers/ranking/{network_id}','FollowerController@ranking')->name('follower.ranking');
+Route::get('/followers/ranking/{network_id}/{account}','FollowerController@ranking')->name('follower.ranking');
 
 Route::get('/posts/{network_id}','PostController@indexNetwork')->name('posts.indexNetwork');
 Route::get('/reactions/{network_id}','ReactionController@indexNetwork')->name('reactions.indexNetwork');

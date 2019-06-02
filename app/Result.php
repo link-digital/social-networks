@@ -23,4 +23,6 @@ class Result extends Model
     {
         return $this->belongsTo('App\Follower');
     }
+
+    
 }
