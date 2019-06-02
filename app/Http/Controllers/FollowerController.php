@@ -123,6 +123,7 @@ class FollowerController extends Controller
         
         // $results = Result::orderBy('grant_total', 'DESC')->paginate(10);
         $results = DB::table('results')
+                        ->select('followers.name','results.*')
                         ->join('followers','followers.id','results.follower_id')
                         ->where('followers.account','=',$account)
                         ->where('followers.network_id','=',$network_id)

@@ -27,7 +27,7 @@
                         @foreach ( $results as $key => $result )
                             <tr>
                                 <th>{{$key }}</th> 
-                                <th></th>
+                                <th>{{$result->name}}</th>
                                 <th>{{$result->comments_points }}</th>
                                 <th>{{$result->share_points }}</th>
                                 <th>{{$result->reactions_points }}</th>
