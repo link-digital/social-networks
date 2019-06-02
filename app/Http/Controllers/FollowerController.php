@@ -82,7 +82,7 @@ class FollowerController extends Controller
     public function edit(Follower $follower)
     
     {
-
+        
                        
         return view('followers.edit', compact('follower'));
         

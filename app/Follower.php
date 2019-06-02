@@ -18,9 +18,17 @@ class Follower extends Model
      * @param  string  $value
      * @return void
      */
-    public function getComments()
+    public function getComments( $network_id = false, $account = false)
     {
-        return $this->hasMany('App\Comment');
+        
+        if( !$account && !$network_id ) {
+            return $this->hasMany('App\Comment');
+        }else{
+            return $this->hasMany('App\Comment')
+                        ->where('network_id','=',$network_id)
+                        ->where('account','=',$account)
+                        ->get();
+        }
     }
 
     /**
@@ -29,9 +37,16 @@ class Follower extends Model
      * @param  string  $value
      * @return void
      */
-    public function getReactions()
+    public function getReactions($network_id = false, $account = false)
     {
-        return $this->hasMany('App\Reaction');
+        if( !$account && !$network_id ) {
+            return $this->hasMany('App\Reaction');
+        }else{
+            return $this->hasMany('App\Reaction')
+                        ->where('network_id','=',$network_id)
+                        ->where('account','=',$account)
+                        ->get();
+        }
     }
 
     /**
@@ -40,9 +55,16 @@ class Follower extends Model
      * @param  string  $value
      * @return void
      */
-    public function getShares()
+    public function getShares($network_id = false, $account = false)
     {
-        return $this->hasMany('App\Share');
+        if( !$account && !$network_id ) {
+            return $this->hasMany('App\Share');
+        }else{
+            return $this->hasMany('App\Share')
+                        ->where('network_id','=',$network_id)
+                        ->where('account','=',$account)
+                        ->get();
+        }
     }
 
 

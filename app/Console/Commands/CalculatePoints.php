@@ -16,7 +16,7 @@ class CalculatePoints extends Command
      *
      * @var string
      */
-    protected $signature = 'calculate:points {network_id_account}';
+    protected $signature = 'calculate:points {network_id} {account} {limit=1000}';
 
     /**
      * The console command description.
@@ -43,26 +43,31 @@ class CalculatePoints extends Command
     public function handle()
     {
               
-        list($network_id, $account) = explode(',',$this->argument('network_id_account'));
+        $network_id = $this->argument('network_id');
+        $account    = $this->argument('account');
+        $limit    = $this->argument('limit');
 
-        $followers = Follower::take(100)->get();
+        $followers = Follower::whereNull('calculated')
+                                ->take($limit)
+                                ->where('network_id','=',$network_id)
+                                ->where('account','=',$account)
+                                ->get();
         
         foreach ($followers as $key => $follower) {
             $this->line('Calculating : '. $follower->id);
             $total_points_comments = 0;
             $total_points_reactions = 0;
             $total_points_shares = 0;
-            $total_points_followers = 100;
+            $total_points_followers = $follower->points;
             $grant_total = 0;
 
-
-            foreach ($follower->getComments as $key => $comment) {
+            foreach ($follower->getComments($network_id, $account) as $key => $comment) {
                 $total_points_comments  += $comment->points_total;
             }
-            foreach ($follower->getReactions as $key => $reaction) {
+            foreach ($follower->getReactions($network_id, $account) as $key => $reaction) {
                 $total_points_reactions += $reaction->points;
             }
-            foreach ($follower->getShares as $key => $share) {
+            foreach ($follower->getShares($network_id, $account) as $key => $share) {
                 $total_points_shares += $share->points;
             }
             
