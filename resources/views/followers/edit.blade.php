@@ -13,7 +13,7 @@
                             <h5 class="card-title"> Name: {{$follower->name}}</h5>
                             <h5 class="card-title"> Network: {{$follower->network_id}}</h5>
                             <h5 class="card-title"> Account: {{$follower->account}}</h5>
-                            <h5 class="card-title"> Account: {{$follower->network_followet_id}}</h5>
+                            <h5 class="card-title"> Account: {{$follower->network_follower_id}}</h5>
 
                         </div>
                 <div class="card-body">
