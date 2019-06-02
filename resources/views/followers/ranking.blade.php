@@ -27,7 +27,7 @@
                         @foreach ( $results as $key => $result )
                             <tr>
                                 <th>{{ $rank++ }}</th> 
-                                <th>{{$result->name}}</th>
+                                <th><a href="/followers/{{$result->id}}/edit">{{$result->name}}</a></th>
                                 <th>{{$result->comments_points }}</th>
                                 <th>{{$result->share_points }}</th>
                                 <th>{{$result->reactions_points }}</th>
