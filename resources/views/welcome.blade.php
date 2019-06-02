@@ -92,7 +92,7 @@
                         <li><a href="/comments/facebook">View Facebook Comments</a></li>
                         <li><a href="/followers/facebook">View Facebook Followers</a></li>
                         <li><a href="/reactions/facebook">View Facebook Reactions</a></li>
-                        <li><a href="/followers/ranking/facebook">View Facebook Ranking</a></li>
+                        <li><a href="/followers/ranking/facebook/cervezaaguila">View Facebook Ranking</a></li>
                     </ul>
                     </div>
                     <div class="links">
@@ -101,7 +101,7 @@
                         <li><a href="/comments/twitter">View Twitter Comments</a></li>
                         <li><a href="/followers/twitter">View Twitter Followers</a></li>
                         <li><a href="/reactions/twitter">View Twitter Reactions</a></li>
-                        <li><a href="/followers/ranking/twitter">View Twitter Ranking</a></li>
+                        <li><a href="/followers/ranking/twitter/cervezaaguila">View Twitter Ranking</a></li>
                     </ul>
                     </div>
                     <div class="links">
@@ -110,7 +110,7 @@
                         <li><a href="/comments/instagram">View instagram Comments</a></li>
                         <li><a href="/followers/instagram">View instagram Followers</a></li>
                         <li><a href="/reactions/instagram">View instagram Reactions</a></li>
-                        <li><a href="/followers/ranking/instagram">View Intagram Ranking</a></li>
+                        <li><a href="/followers/ranking/instagram/cervezaaguila">View Intagram Ranking</a></li>
                     </ul>
                     </div>
                     {{-- <a href="https://nova.laravel.com">Nova</a>
