@@ -12,7 +12,7 @@ class PostParse extends Command
      *
      * @var string
      */
-    protected $signature = 'posts:parse {limit = 500}';
+    protected $signature = 'posts:parse {limit=1000}';
 
     /**
      * The console command description.
