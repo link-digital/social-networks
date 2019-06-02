@@ -54,7 +54,7 @@ class FollowersImport extends Command
         $contents = explode(PHP_EOL,$contents); 
 
         foreach ($contents as $key => $line) {
-            $this->info('Process line'. $key);
+            $this->info('['. $key .']');
             if($key != 0){
                 $line_contents = explode("\t", $line);
                 foreach ($fields as $index => $field) {
@@ -67,13 +67,10 @@ class FollowersImport extends Command
                 $fields_to_save['network_id'] = $network_id;
                 $fields_to_save['nickname'] = $fields_to_save['name'];
                 $fields_to_save['account'] = $account;
-
-                // dd($fields_to_save);
                 $follower = Follower::firstOrCreate($fields_to_save);
-                // if(!Follower::where('network_follower_id',$fields_to_save['network_follower_id'])->first()){
-                //     $post = Follower::create($fields_to_save);
-                // }
-                
+                if($follower->wasRecentlyCreated){
+                    $this->info('Created');
+                }
             }
         }
     }

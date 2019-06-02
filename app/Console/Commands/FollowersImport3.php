@@ -59,9 +59,9 @@ class FollowersImport3 extends Command
                 $fields_to_save['network_id'] = 'Facebook';
                 $fields_to_save['nickname'] = $fields_to_save['name'];
 
-                // dd($fields_to_save);
-                if(!Follower::where('network_follower_id',$fields_to_save['network_follower_id'])->first()){
-                    $post = Follower::create($fields_to_save);
+                $follower = Follower::firstOrCreate($fields_to_save);
+                if($follower->wasRecentlyCreated){
+                    $this->info('Created');
                 }
                 
             }
