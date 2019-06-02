@@ -129,10 +129,10 @@ class FollowerController extends Controller
                         ->where('followers.network_id','=',$network_id)
                         ->orderBy('results.grant_total', 'DESC')
                         ->paginate(10);
-
+        $rank = $results->firstItem();
         
 
-        return view('followers.ranking',compact('results','network_id','account'));
+        return view('followers.ranking',compact('results','network_id','account','rank'));
     }
 
      /**

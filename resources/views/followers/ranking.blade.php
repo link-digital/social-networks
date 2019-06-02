@@ -26,7 +26,7 @@
                         <tbody>
                         @foreach ( $results as $key => $result )
                             <tr>
-                                <th>{{$key }}</th> 
+                                <th>{{ $rank++ }}</th> 
                                 <th>{{$result->name}}</th>
                                 <th>{{$result->comments_points }}</th>
                                 <th>{{$result->share_points }}</th>
