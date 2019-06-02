@@ -54,7 +54,7 @@ class CalculatePoints extends Command
                                 ->get();
         
         foreach ($followers as $key => $follower) {
-            $this->line('Calculating : '. $follower->id);
+            $this->line('['. $key .'] Calculating : '. $follower->id);
             $total_points_comments = 0;
             $total_points_reactions = 0;
             $total_points_shares = 0;
