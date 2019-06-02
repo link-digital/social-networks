@@ -86,7 +86,8 @@ class CalculatePoints extends Command
             $result->save();
 
             $this->line('Grant Total: ' . $grant_total);
-            $follower->calculated = true;
+            $follower->calculated = 1;
+            $follower->save();
         }
 
         $this->info('Finish');
