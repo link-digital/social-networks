@@ -60,7 +60,7 @@ class ReactionsImport extends Command
                         $this->info('finish');
                     }
                 }
-                $fields_to_save['network_id'] = $file_name;
+                $fields_to_save['network_id'] = $network_id;
                 $fields_to_save['account'] = $account;
                 try {
                     $post = Reaction::create($fields_to_save);
