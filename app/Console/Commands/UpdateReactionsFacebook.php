@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Reaction;
+use App\Reaction;
 
 class UpdateReactionsFacebook extends Command
 {
