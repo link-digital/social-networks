@@ -15,6 +15,7 @@ class Reaction extends Model
         'type',
         'link',
         'points',
+        'account'
     ];
 
 
