@@ -47,7 +47,9 @@ class ReactionsFollowetRelated extends Command
 
         foreach ($reactions as $key => $reaction) {
             $this->info('Search: '. $reaction->id);
-            $follower = Follower::where('network_follower_id','=',$reaction->network_follower_id)->first();
+            $follower = Follower::where('network_follower_id','=',$reaction->network_follower_id)
+                                    ->where('account','=',$reaction->account)
+                                    ->first();
             if($follower){
                 $this->info(' Matched: '. $follower->id);
                 $reaction->follower_id = $follower->id;
