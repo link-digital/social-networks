@@ -44,12 +44,14 @@ class ReactionsFollowetRelated extends Command
         $network_id = $this->argument('network_id');
         $limit = $this->argument('limit');
 
-        $reactions = Reaction::whereNull('follower_id')->take($limit)->get();
+        $reactions = Reaction::whereNull('follower_id')
+                                ->where('network_id','=',$network_id)
+                                ->take($limit)
+                                ->get();
 
         foreach ($reactions as $key => $reaction) {
             $this->info('Search: '. $reaction->id);
             $follower = Follower::where('network_follower_id','=',$reaction->network_follower_id)
-                                    ->where('network_id','=',$network_id)
                                     ->where('account','=',$reaction->account)
                                     ->first();
             if($follower){
