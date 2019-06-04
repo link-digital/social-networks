@@ -85,32 +85,64 @@
                     {{env('APP_NAME')}}
                 </div>
 
-                <div class="links">
+                <div class="links col-6" style="float:left">
                     <div class="links">
                     <ul>
-                        <li><a href="/posts/facebook">View Facebook Posts</a></li>
-                        <li><a href="/comments/facebook">View Facebook Comments</a></li>
-                        <li><a href="/followers/facebook">View Facebook Followers</a></li>
-                        <li><a href="/reactions/facebook">View Facebook Reactions</a></li>
-                        <li><a href="/followers/ranking/facebook/cervezaaguila">View Facebook Ranking</a></li>
+                        <li><a href="/posts/facebook">Aguila View Facebook Posts</a></li>
+                        <li><a href="/comments/facebook">Aguila View Facebook Comments</a></li>
+                        <li><a href="/followers/facebook">Aguila View Facebook Followers</a></li>
+                        <li><a href="/reactions/facebook">Aguila View Facebook Reactions</a></li>
+                        <li><a href="/followers/ranking/facebook/cervezaaguila">Aguila View Facebook Ranking</a></li>
                     </ul>
                     </div>
                     <div class="links">
                     <ul>
-                        <li><a href="/posts/twitter">View Twitter Posts</a></li>
-                        <li><a href="/comments/twitter">View Twitter Comments</a></li>
-                        <li><a href="/followers/twitter">View Twitter Followers</a></li>
-                        <li><a href="/reactions/twitter">View Twitter Reactions</a></li>
-                        <li><a href="/followers/ranking/twitter/cervezaaguila">View Twitter Ranking</a></li>
+                        <li><a href="/posts/twitter">Aguila View Twitter Posts</a></li>
+                        <li><a href="/comments/twitter">Aguila View Twitter Comments</a></li>
+                        <li><a href="/followers/twitter">Aguila View Twitter Followers</a></li>
+                        <li><a href="/reactions/twitter">Aguila View Twitter Reactions</a></li>
+                        <li><a href="/followers/ranking/twitter/cervezaaguila">Aguila View Twitter Ranking</a></li>
                     </ul>
                     </div>
                     <div class="links">
                     <ul>
-                        <li><a href="/posts/instagram">View instagram Posts</a></li>
-                        <li><a href="/comments/instagram">View instagram Comments</a></li>
-                        <li><a href="/followers/instagram">View instagram Followers</a></li>
-                        <li><a href="/reactions/instagram">View instagram Reactions</a></li>
-                        <li><a href="/followers/ranking/instagram/cervezaaguila">View Intagram Ranking</a></li>
+                        <li><a href="/posts/instagram">Aguila View instagram Posts</a></li>
+                        <li><a href="/comments/instagram">Aguila View instagram Comments</a></li>
+                        <li><a href="/followers/instagram">Aguila View instagram Followers</a></li>
+                        <li><a href="/reactions/instagram">Aguila View instagram Reactions</a></li>
+                        <li><a href="/followers/ranking/instagram/cervezaaguila">Aguila View Intagram Ranking</a></li>
+                    </ul>
+                    </div>
+                    {{-- <a href="https://nova.laravel.com">Nova</a>
+                    <a href="https://forge.laravel.com">Forge</a>
+                    <a href="https://github.com/laravel/laravel">GitHub</a> --}}
+                </div>
+                <div class="links col-6" style="float:left">
+                    <div class="links">
+                    <ul>
+                        <li><a href="/posts/facebook">FCF View Facebook Posts</a></li>
+                        <li><a href="/comments/facebook">FCF View Facebook Comments</a></li>
+                        <li><a href="/followers/facebook">FCF View Facebook Followers</a></li>
+                        <li><a href="/reactions/facebook">FCF View Facebook Reactions</a></li>
+                        <li><a href="/followers/ranking/facebook/fcf">FCF View Facebook Ranking</a></li>
+                    </ul>
+                    </div>
+                    <div class="links">
+                    <ul>
+                        <li><a href="/posts/twitter">FCF View Twitter Posts</a></li>
+                        <li><a href="/comments/twitter">FCF View Twitter Comments</a></li>
+                        <li><a href="/followers/twitter">FCF View Twitter Followers</a></li>
+                        <li><a href="/reactions/twitter">FCF View Twitter Reactions</a></li>
+                        <li><a href="/followers/ranking/twitter/fcf">FCF View Twitter Ranking</a></li>
+                    </ul>
+                    </div>
+                    <div class="links">
+                    <ul>
+                        <li><a href="/posts/instagram">FCF View instagram Posts</a></li>
+                        <li><a href="/comments/instagram">FCF View instagram Comments</a></li>
+                        <li><a href="/followers/instagram">FCF View instagram Followers</a></li>
+                        <li><a href="/reactions/instagram">FCF View instagram Reactions</a></li>
+                        <li><a href="/followers/ranking/instagram/fcf">FCF View Intagram Ranking</a></li>
                     </ul>
                     </div>
                     {{-- <a href="https://nova.laravel.com">Nova</a>
