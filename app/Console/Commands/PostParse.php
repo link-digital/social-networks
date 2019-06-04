@@ -39,7 +39,11 @@ class PostParse extends Command
     public function handle()
     {
         $limit = $this->argument('limit');
-        $posts = Post::whereNull('get_parse')->where('comments', '!=', 0 )->where('network_id', '=', 'Twitter')->take($limit)->get();
+        $posts = Post::whereNull('get_parse')->where('comments', '!=', 0 )
+                    ->where('network_id', '=', 'Twitter')
+                    ->where('account', '=', 'FCF')
+                    ->take($limit)
+                    ->get();
         foreach ($posts as $key => $post) {
             $this->info($post->id);
             $result = $post->parseComments();
