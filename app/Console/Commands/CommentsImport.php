@@ -13,7 +13,7 @@ class CommentsImport extends Command
      *
      * @var string
      */
-    protected $signature = 'comments:import {network_id} {file_name}';
+    protected $signature = 'comments:import {network_id} {account} {file_name}';
 
     /**
      * The console command description.
@@ -21,6 +21,7 @@ class CommentsImport extends Command
      * @var string
      */
     protected $description = 'Importa commentarios desde un archivo csv, necesita dos parametros 
+    {account}    = "FCF"
     {network_id} = "Facebook" 
     {file_name}  = "file.csv" ';
 
@@ -45,8 +46,7 @@ class CommentsImport extends Command
         $network_id = $this->argument('network_id');
         $account = $this->argument('account');
         $file_name = $this->argument('file_name');
-        print $network_id;
-        print $file_name;
+        
         
         $fields = array('network_comment_id','comment_date','network_follower_id','name','message','likes','comments','link');
 
@@ -67,7 +67,7 @@ class CommentsImport extends Command
                 }
                 $fields_to_save['network_id'] = $network_id;
                 $fields_to_save['message'] = mb_convert_encoding($fields_to_save['message'], "Windows-1252", "UTF-8");
-                $fields_to_save['account'] = 'FCF';
+                $fields_to_save['account'] = $account;
 
                 try {
                     $post = Comment::create($fields_to_save);
