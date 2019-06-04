@@ -60,6 +60,7 @@ class ReactionsImport extends Command
                         $this->info('finish');
                     }
                 }
+                $fields_to_save['link'] = NULL;
                 $fields_to_save['network_id'] = $network_id;
                 $fields_to_save['account'] = $account;
                 try {
