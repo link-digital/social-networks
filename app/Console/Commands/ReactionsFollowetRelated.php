@@ -14,7 +14,7 @@ class ReactionsFollowetRelated extends Command
      *
      * @var string
      */
-    protected $signature = 'reactions:followers {limit=10000}';
+    protected $signature = 'reactions:followers {network_id} {limit=10000}';
 
     /**
      * The console command description.
@@ -41,6 +41,7 @@ class ReactionsFollowetRelated extends Command
     public function handle()
     {
         
+        $network_id = $this->argument('network_id');
         $limit = $this->argument('limit');
 
         $reactions = Reaction::whereNull('follower_id')->take($limit)->get();
@@ -48,6 +49,7 @@ class ReactionsFollowetRelated extends Command
         foreach ($reactions as $key => $reaction) {
             $this->info('Search: '. $reaction->id);
             $follower = Follower::where('network_follower_id','=',$reaction->network_follower_id)
+                                    ->where('network_id','=',$network_id)
                                     ->where('account','=',$reaction->account)
                                     ->first();
             if($follower){
