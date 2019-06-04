@@ -49,6 +49,7 @@ class ReactionsPoints extends Command
             'LOVE' => 5,
             'SAD' => 0,
             'WOW' => 2,
+            'Like' => 2
         ];
 
         foreach ($reactions as $key => $reaction) {
