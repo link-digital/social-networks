@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
 {
-    protected $fillable = array('network_id','network_comment_id','network_follower_id','comment_date','post_id','follower_id','link','message','likes','comments','points');
+    protected $fillable = array('network_id','network_comment_id','network_follower_id','comment_date','post_id','follower_id','link','message','likes','comments','points', 'account');
 
 
       /**

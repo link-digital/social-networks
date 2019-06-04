@@ -43,6 +43,7 @@ class CommentsImport extends Command
     {
 
         $network_id = $this->argument('network_id');
+        $account = $this->argument('account');
         $file_name = $this->argument('file_name');
         print $network_id;
         print $file_name;
@@ -65,6 +66,9 @@ class CommentsImport extends Command
                     }
                 }
                 $fields_to_save['network_id'] = $network_id;
+                $fields_to_save['message'] = mb_convert_encoding($fields_to_save['message'], "Windows-1252", "UTF-8");
+                $fields_to_save['account'] = 'FCF';
+
                 try {
                     $post = Comment::create($fields_to_save);
                 } catch (\Exception $e) {
