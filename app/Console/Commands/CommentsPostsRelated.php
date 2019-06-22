@@ -43,10 +43,13 @@ class CommentsPostsRelated extends Command
     public function handle()
     {
         $network_id = $this->argument('network_id');
+        $account = $this->argument('account');
+
         $limit = $this->argument('limit');
 
 
         $comments = Comment::where('network_id','=',$network_id)
+                        ->where('account','=', $account)
                         ->whereNull('post_id')
                         ->limit($limit)
                         ->orderBy('updated_at', 'DESC')
@@ -90,7 +93,7 @@ class CommentsPostsRelated extends Command
             }
 
         }else{
-            $this->info('Not Found');
+            $this->info('Nothing for process');
         }
 
     }
