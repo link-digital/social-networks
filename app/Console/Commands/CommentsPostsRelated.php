@@ -14,7 +14,7 @@ class CommentsPostsRelated extends Command
      *
      * @var string
      */
-    protected $signature = 'comments:posts {network_id} {limit=5000}';
+    protected $signature = 'comments:posts {network_id} {account} {limit=5000}';
 
     /**
      * The console command description.
