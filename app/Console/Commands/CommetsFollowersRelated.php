@@ -14,7 +14,7 @@ class CommetsFollowersRelated extends Command
      *
      * @var string
      */
-    protected $signature = 'comments:followers {limit=10000}';
+    protected $signature = 'comments:followers {network_id} {account} {limit=10000}';
 
     /**
      * The console command description.
@@ -53,7 +53,7 @@ class CommetsFollowersRelated extends Command
                     ->where('account','=', $account)
                     ->where('network_id','=', $network_id)
                     ->take($limit)->get();
-                    
+
         foreach ( $comments as $key => $comment ) {
             $this->info($comment->id);
             $follower = Follower::where('network_follower_id', '=', $comment->network_follower_id )->where('network_id', '=', $comment->network_id)->first();
