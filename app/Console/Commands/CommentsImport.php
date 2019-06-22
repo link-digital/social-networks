@@ -53,7 +53,7 @@ class CommentsImport extends Command
         $contents = Storage::disk('local')->get('/public/'.$file_name);
         
         $contents = explode(PHP_EOL,$contents); 
-        
+        print_r(count($contents));
         foreach ($contents as $key => $line) {
             if($key != 0){
                 $this->info('Process line '. $key);
@@ -64,13 +64,12 @@ class CommentsImport extends Command
                         $fields_to_save[$field] = $line_contents[$index]; 
                     }else{
                         $this->info('finish');
-                        exit;
                     }
                 }
                 $fields_to_save['network_id'] = $network_id;
                 $fields_to_save['message'] = $fields_to_save['message'];
                 $fields_to_save['account'] = $account;
-                $fields_to_save['comment_date'] = '2019-01-01 00:00:00';
+                $fields_to_save['comment_date'] = '2019-06-22 00:00:00';
 
                 print_r($fields_to_save);
                 try {
