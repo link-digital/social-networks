@@ -68,7 +68,7 @@ class CommentsImport extends Command
                     }
                 }
                 $fields_to_save['network_id'] = $network_id;
-                $fields_to_save['message'] = mb_convert_encoding($fields_to_save['message'], "Windows-1252", "UTF-8");
+                $fields_to_save['message'] = $fields_to_save['message'];
                 $fields_to_save['account'] = $account;
                 $fields_to_save['comment_date'] = '2019-01-01 00:00:00';
 
@@ -81,5 +81,6 @@ class CommentsImport extends Command
                 }
             }
         }
+        $this->info('finish');
     }
 }
