@@ -58,11 +58,13 @@ class CommentsImport extends Command
             if($key != 0){
                 $this->info('Process line '. $key);
                 $line_contents = explode("\t", $line);
+                $fields_to_save = null;
                 foreach ($fields as $index => $field) {
                     if(isset($line_contents[$index])){
                         $fields_to_save[$field] = $line_contents[$index]; 
                     }else{
                         $this->info('finish');
+                        exit;
                     }
                 }
                 $fields_to_save['network_id'] = $network_id;
@@ -70,13 +72,13 @@ class CommentsImport extends Command
                 $fields_to_save['account'] = $account;
                 $fields_to_save['comment_date'] = '2019-01-01 00:00:00';
 
+                print_r($fields_to_save);
                 try {
                     $post = Comment::create($fields_to_save);
                 } catch (\Exception $e) {
                     $this->info('Process line error '. $key. ' '. $e->getMessage());
                     Storage::disk('local')->append('/public/file.log', json_encode($fields_to_save)."\n");
                 }
-                
             }
         }
     }
