@@ -47,7 +47,7 @@ class ReactionsFollowetRelated extends Command
  
         $reactions = Reaction::whereNull('follower_id')
                                 ->where('network_id','=',$network_id)
-                                ->where('account','=',$network_id)
+                                ->where('account','=',$account)
                                 ->take($limit)
                                 ->get();
 
@@ -76,9 +76,5 @@ class ReactionsFollowetRelated extends Command
                 $this->info('No Matched');
             }
         }
-
-
-
-
     }
 }
