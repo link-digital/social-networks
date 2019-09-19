@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app', ['activePage' => Request()->network_id , 'titlePage' => __('Posts')])
 
 @section('content')
 <div class="container">

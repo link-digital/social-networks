@@ -1,7 +1,4 @@
-
-
-
-@extends('layouts.app')
+@extends('layouts.app', ['activePage' => 'followers', 'titlePage' => __('Index Network')])
 
 @section('content')
 <div class="container">

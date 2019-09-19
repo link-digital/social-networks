@@ -13,6 +13,7 @@
         "doctrine/dbal": "^2.9",
         "fideloper/proxy": "^4.0",
         "j7mbo/twitter-api-php": "^1.0",
+        "laravel-frontend-presets/material-dashboard": "^1.0",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
         "paquettg/php-html-parser": "^2.0",

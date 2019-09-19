@@ -76,7 +76,8 @@ class Comment extends Model
         }
 
         elseif( is_null($network_id) && !is_null($account) ){
-
+            $count = Comment::where('account','=', $account)
+                                ->count();
         }
 
         elseif( !is_null($network_id) && is_null($account) ){

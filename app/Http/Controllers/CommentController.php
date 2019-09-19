@@ -25,11 +25,15 @@ class CommentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function indexNetwork($network)
+    public function indexNetwork($network, $account)
     
     {
-        $count = Comment::where('network_id', '=', $network)->count();
-        $comments = Comment::where('network_id', '=', $network)->paginate(15);
+        $count = Comment::where('network_id', '=', $network)
+            ->where('account', '=', $account)
+            ->count();
+        $comments = Comment::where('network_id', '=', $network)
+            ->where('account', '=', $account)
+            ->paginate(15);
         
         return view('comments.index', compact('comments','count'));
     }

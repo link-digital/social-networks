@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app', ['activePage' => 'posts', 'titlePage' => __('Index Network')])
 
 @section('content')
 <div class="container">

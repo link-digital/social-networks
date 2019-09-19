@@ -24,11 +24,15 @@ class ReactionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function indexNetwork($network)
+    public function indexNetwork($network, $account)
     {
-        $count = Reaction::where('network_id', '=', $network)->count();
+        $count = Reaction::where('network_id', '=', $network)
+            ->where('account', '=', $account)
+            ->count();
         
-        $reactions = Reaction::where('network_id', '=', $network)->paginate(15);
+        $reactions = Reaction::where('network_id', '=', $network)
+            ->where('account', '=', $account)
+            ->paginate(15);
         
         return view('reactions.index', compact('reactions','count'));
     }

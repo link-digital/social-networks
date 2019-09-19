@@ -24,67 +24,42 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return \Illuminate\View\View
      */
     public function index()
     {
-        return view('home');
-    }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function dashboard($network_id)
-    {
-        
         // $aguila_account = 'CervezaAguila';
         // $fcf_account = 'FCF';
-
         // $no_posts_aguila = Post::where('network_id','=',$network_id)
         //                         ->where('account','=', $aguila_account)
         //                         ->count();
-
         // $no_posts_fcf    = Post::where('network_id','=',$network_id)
         //                         ->where('account','=', $fcf_account)
         //                         ->count();
-
-
-        $no_posts_aguila = Post::getTotal($network_id,'CervezaAguila');
-        $no_posts_fcf    = Post::getTotal($network_id,'FCF');
-
-        $no_followers_aguila = Follower::getTotal($network_id,'CervezaAguila');
-        $no_followers_fcf    = Follower::getTotal($network_id,'FCF');
-
-        $no_comments_aguila = Comment::getTotal($network_id,'CervezaAguila');
-        $no_comments_fcf    = Comment::getTotal($network_id,'FCF');
-
-
-        $no_comments_over_comments_aguila = Comment::getTotalComments($network_id,'CervezaAguila');
-        $no_comments_over_comments_fcf = Comment::getTotalComments($network_id,'FCF');
-
-        $no_reactions_over_comments_aguila = Comment::getTotalReactions($network_id,'CervezaAguila');
-        $no_reactions_over_comments_fcf = Comment::getTotalReactions($network_id,'FCF');
+        $no_posts_aguila = Post::getTotal(null,'CervezaAguila');
+        $no_posts_fcf    = Post::getTotal(null,'FCF');
+        $no_followers_aguila = Follower::getTotal(null,'CervezaAguila');
+        $no_followers_fcf    = Follower::getTotal(null,'FCF');
+        $no_comments_aguila = Comment::getTotal(null,'CervezaAguila');
+        $no_comments_fcf    = Comment::getTotal(null,'FCF');
+        $no_comments_over_comments_aguila = Comment::getTotalComments(null,'CervezaAguila');
+        $no_comments_over_comments_fcf = Comment::getTotalComments(null,'FCF');
+        $no_reactions_over_comments_aguila = Comment::getTotalReactions(null,'CervezaAguila');
+        $no_reactions_over_comments_fcf = Comment::getTotalReactions(null,'FCF');
         
-        $no_keywords_aguila = Comment::getTotalKeyWords($network_id,'CervezaAguila');
-        $no_keywords_fcf    = Comment::getTotalKeyWords($network_id,'FCF');
-
-        $no_reactions_aguila = Reaction::getTotalKeyWords($network_id,'CervezaAguila');
-        $no_reactions_fcf    = Reaction::getTotalKeyWords($network_id,'FCF');
-
-        $no_reactions_over_post_aguila  = Post::getTotalReactions($network_id,'CervezaAguila');
-        $no_reactions_over_post_fcf     = Post::getTotalReactions($network_id,'FCF'); 
-
-        $no_actives_aguila = Post::getTotalActives($network_id,'CervezaAguila');
-        $no_actives_fcf = Post::getTotalActives($network_id,'FCF');
-
-        $no_shares_aguila = Share::getTotal($network_id,'CervezaAguila');
-        $no_shares_fcf = Share::getTotal($network_id,'FCF');
-
+        $no_keywords_aguila = Comment::getTotalKeyWords(null,'CervezaAguila');
+        $no_keywords_fcf    = Comment::getTotalKeyWords(null,'FCF');
+        $no_reactions_aguila = Reaction::getTotalKeyWords(null,'CervezaAguila');
+        $no_reactions_fcf    = Reaction::getTotalKeyWords(null,'FCF');
+        $no_reactions_over_post_aguila  = Post::getTotalReactions(null,'CervezaAguila');
+        $no_reactions_over_post_fcf     = Post::getTotalReactions(null,'FCF'); 
+        $no_actives_aguila = Post::getTotalActives(null,'CervezaAguila');
+        $no_actives_fcf = Post::getTotalActives(null,'FCF');
+        $no_shares_aguila = Share::getTotal(null,'CervezaAguila');
+        $no_shares_fcf = Share::getTotal(null,'FCF');
         // $no_likes_over_commets_aguila = Comment::getTotalLikes($network_id,'CervezaAguila');
         // $no_likes_over_commets_fcf    = Comment::getTotalLikes($network_id,'FCF');
-
         $data = (object)[
             'CervezaAguila' => [
                 'no_posts'  => $no_posts_aguila,
@@ -99,7 +74,6 @@ class HomeController extends Controller
                 'reactions_over_comments' => $no_reactions_over_comments_aguila,
                 // 'likes_over_comments' => $no_likes_over_commets_aguila,
             ],
-
             'FCF' => [
                 'no_posts'  => $no_posts_fcf,
                 'no_post_seleccion' => $no_actives_fcf,
@@ -114,7 +88,79 @@ class HomeController extends Controller
                 // 'likes_over_comments' => $no_likes_over_commets_fcf,
             ]
         ];
+        
+        
+        return view('dashboard', compact('data')); 
 
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function dashboard($network_id)
+    {
+        
+        // $aguila_account = 'CervezaAguila';
+        // $fcf_account = 'FCF';
+        // $no_posts_aguila = Post::where('network_id','=',$network_id)
+        //                         ->where('account','=', $aguila_account)
+        //                         ->count();
+        // $no_posts_fcf    = Post::where('network_id','=',$network_id)
+        //                         ->where('account','=', $fcf_account)
+        //                         ->count();
+        $no_posts_aguila = Post::getTotal($network_id,'CervezaAguila');
+        $no_posts_fcf    = Post::getTotal($network_id,'FCF');
+        $no_followers_aguila = Follower::getTotal($network_id,'CervezaAguila');
+        $no_followers_fcf    = Follower::getTotal($network_id,'FCF');
+        $no_comments_aguila = Comment::getTotal($network_id,'CervezaAguila');
+        $no_comments_fcf    = Comment::getTotal($network_id,'FCF');
+        $no_comments_over_comments_aguila = Comment::getTotalComments($network_id,'CervezaAguila');
+        $no_comments_over_comments_fcf = Comment::getTotalComments($network_id,'FCF');
+        $no_reactions_over_comments_aguila = Comment::getTotalReactions($network_id,'CervezaAguila');
+        $no_reactions_over_comments_fcf = Comment::getTotalReactions($network_id,'FCF');
+        
+        $no_keywords_aguila = Comment::getTotalKeyWords($network_id,'CervezaAguila');
+        $no_keywords_fcf    = Comment::getTotalKeyWords($network_id,'FCF');
+        $no_reactions_aguila = Reaction::getTotalKeyWords($network_id,'CervezaAguila');
+        $no_reactions_fcf    = Reaction::getTotalKeyWords($network_id,'FCF');
+        $no_reactions_over_post_aguila  = Post::getTotalReactions($network_id,'CervezaAguila');
+        $no_reactions_over_post_fcf     = Post::getTotalReactions($network_id,'FCF'); 
+        $no_actives_aguila = Post::getTotalActives($network_id,'CervezaAguila');
+        $no_actives_fcf = Post::getTotalActives($network_id,'FCF');
+        $no_shares_aguila = Share::getTotal($network_id,'CervezaAguila');
+        $no_shares_fcf = Share::getTotal($network_id,'FCF');
+        // $no_likes_over_commets_aguila = Comment::getTotalLikes($network_id,'CervezaAguila');
+        // $no_likes_over_commets_fcf    = Comment::getTotalLikes($network_id,'FCF');
+        $data = (object)[
+            'CervezaAguila' => [
+                'no_posts'  => $no_posts_aguila,
+                'no_post_seleccion' => $no_actives_aguila,
+                'reactions_over_posts' => $no_reactions_over_post_aguila,
+                'user_interactions' => $no_followers_aguila,
+                'shares'    => $no_shares_aguila,
+                'comments'  => $no_comments_aguila,
+                'keywords'  => $no_keywords_aguila,
+                'reactions' => $no_reactions_aguila,
+                'comments_over_comments' => $no_comments_over_comments_aguila,
+                'reactions_over_comments' => $no_reactions_over_comments_aguila,
+                // 'likes_over_comments' => $no_likes_over_commets_aguila,
+            ],
+            'FCF' => [
+                'no_posts'  => $no_posts_fcf,
+                'no_post_seleccion' => $no_actives_fcf,
+                'reactions_over_posts' => $no_reactions_over_post_fcf,
+                'user_interactions' => $no_followers_fcf,
+                'shares'    => $no_shares_fcf,
+                'comments'  => $no_comments_fcf,
+                'keywords'  => $no_keywords_fcf,
+                'reactions' => $no_reactions_fcf,
+                'comments_over_comments' => $no_comments_over_comments_fcf,
+                'reactions_over_comments' => $no_reactions_over_comments_fcf,
+                // 'likes_over_comments' => $no_likes_over_commets_fcf,
+            ]
+        ];
         
         return view('dashboard', compact('data','network_id') );
     }

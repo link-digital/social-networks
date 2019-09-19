@@ -25,7 +25,8 @@ class PostController extends Controller
     {
         
         
-        $posts = Post::paginate(15);
+        // $posts = Post::paginate(15);
+        
         return view('posts.index', compact('posts'));
         
     }
@@ -35,11 +36,15 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function indexNetwork($network)
+    public function indexNetwork($network, $account)
     {
-        $count = Post::where('network_id', '=', $network)->count();
-        $posts = Post::where('network_id', '=', $network)->paginate(15);
-        return view('posts.index', compact('posts', 'count'));
+        $count = Post::where('network_id', '=', $network)
+                    ->where('account', '=', $account)
+                    ->count();
+        $posts = Post::where('network_id', '=', $network)
+                    ->where('account', '=', $account)
+                    ->paginate(15);
+        return view('posts.indexNetwork', compact('posts', 'count'));
         
     }
 

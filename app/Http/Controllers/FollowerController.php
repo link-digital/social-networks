@@ -31,12 +31,16 @@ class FollowerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function indexNetwork($network)
+    public function indexNetwork($network, $account)
     {
-        $count = Follower::where('network_id', '=', $network)->count();
+        $count = Follower::where('network_id', '=', $network)
+            ->where('account', '=', $account)
+            ->count();
 
-        $followers = Follower::where('network_id', '=', $network)->paginate(15);
-        
+        $followers = Follower::where('network_id', '=', $network)
+            ->where('account', '=', $account)
+            ->paginate(15);
+            
         return view('followers.index', compact('followers','count'));
 
     }

@@ -90,6 +90,8 @@ class Follower extends Model
         }
 
         elseif( is_null($network_id) && !is_null($account) ){
+            $count = Follower::where('account','=', $account)
+                                ->count();
 
         }
 

@@ -251,11 +251,12 @@ class Post extends Model
         }
 
         elseif( is_null($network_id) && is_null($account) ){
-
-
+            
         }
 
         elseif( is_null($network_id) && !is_null($account) ){
+            $count = Post::where('account','=', $account)
+                        ->count();
 
         }
 
