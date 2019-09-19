@@ -12,7 +12,7 @@
               <div class="card-icon">
                 <i class="material-icons">content_copy</i>
               </div>
-              <p class="card-category">Total Post CervezaAguila</p>
+              <p class="card-category">Total Posts</p>
               <h3 class="card-title">{{$data->CervezaAguila['no_posts']}}
                 {{-- <small>GB</small> --}}
               </h3>
@@ -31,7 +31,7 @@
               <div class="card-icon">
                 <i class="material-icons">store</i>
               </div>
-              <p class="card-category">Total Comments CervezaAguila</p>
+              <p class="card-category">Total Comments</p>
               <h3 class="card-title">{{ $data->CervezaAguila['comments'] }}</h3>
             </div>
             <div class="card-footer">
@@ -47,8 +47,24 @@
               <div class="card-icon">
                 <i class="material-icons">info_outline</i>
               </div>
-              <p class="card-category">Total Followers Interactions</p>
+              <p class="card-category">Total Followers</p>
               <h3 class="card-title">{{ $data->CervezaAguila['user_interactions'] }}</h3>
+            </div>
+            <div class="card-footer">
+              <div class="stats">
+                <i class="material-icons">local_offer</i> Tracked from Github
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="card card-stats">
+            <div class="card-header card-header-danger card-header-icon">
+              <div class="card-icon">
+                <i class="material-icons">info_outline</i>
+              </div>
+              <p class="card-category">Total Reactions</p>
+              <h3 class="card-title">{{ $data->CervezaAguila['reactions'] }}</h3>
             </div>
             <div class="card-footer">
               <div class="stats">
@@ -74,7 +90,7 @@
           </div>
         </div>
       </div>
-      <div class="row">
+      {{-- <div class="row">
         <div class="col-md-4">
           <div class="card card-chart">
             <div class="card-header card-header-success">
@@ -108,7 +124,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> --}}
       {{-- end section --}}
       <hr>
       <h1>FCF</h1>
@@ -120,7 +136,7 @@
               <div class="card-icon">
                 <i class="material-icons">content_copy</i>
               </div>
-              <p class="card-category">Total Post FCF</p>
+              <p class="card-category">Total Post</p>
               <h3 class="card-title">{{$data->FCF['no_posts']}}
                 {{-- <small>GB</small> --}}
               </h3>
@@ -139,7 +155,7 @@
               <div class="card-icon">
                 <i class="material-icons">store</i>
               </div>
-              <p class="card-category">Total Comments FCF</p>
+              <p class="card-category">Total Comments</p>
               <h3 class="card-title">{{ $data->FCF['comments'] }}</h3>
             </div>
             <div class="card-footer">
@@ -155,8 +171,24 @@
               <div class="card-icon">
                 <i class="material-icons">info_outline</i>
               </div>
-              <p class="card-category">Total Followers Interactions</p>
+              <p class="card-category">Total Followers</p>
               <h3 class="card-title">{{ $data->FCF['user_interactions'] }}</h3>
+            </div>
+            <div class="card-footer">
+              <div class="stats">
+                <i class="material-icons">local_offer</i> Tracked from Github
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="card card-stats">
+            <div class="card-header card-header-danger card-header-icon">
+              <div class="card-icon">
+                <i class="material-icons">info_outline</i>
+              </div>
+              <p class="card-category">Total Reactions</p>
+              <h3 class="card-title">{{ $data->FCF['reactions'] }}</h3>
             </div>
             <div class="card-footer">
               <div class="stats">
@@ -182,7 +214,7 @@
           </div>
         </div>
       </div>
-      <div class="row">
+      {{-- <div class="row">
         <div class="col-md-4">
           <div class="card card-chart">
             <div class="card-header card-header-success">
@@ -216,13 +248,9 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> --}}
       {{-- end section --}}
-      
-      <div class="row">
-        
-      </div>
-      <div class="row">
+      {{-- <div class="row">
         <div class="col-lg-6 col-md-12">
           <div class="card">
             <div class="card-header card-header-tabs card-header-primary">
@@ -512,7 +540,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> --}}
     </div>
   </div>
 @endsection
