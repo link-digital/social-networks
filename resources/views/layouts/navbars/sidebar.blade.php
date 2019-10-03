@@ -5,8 +5,10 @@
       Tip 2: you can also add an image using data-image tag
   -->
   <div class="logo">
-    <a href="https://creative-tim.com/" class="simple-text logo-normal">
-      {{ __('Creative Tim') }}
+      
+    <a href="https://linkdigital.co/" class="simple-text logo-normal">
+      {{ __('Link Digital') }} 
+      <i><img style="width:25px" src="{{ asset('material') }}/img/id-05.png"></i>
     </a>
   </div>
   <div class="sidebar-wrapper">
@@ -71,12 +73,12 @@
           </ul>
         </div>
       </li>
-      <li class="nav-item{{ $activePage == 'table' ? ' active' : '' }}">
+      {{-- <li class="nav-item{{ $activePage == 'table' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('table') }}">
           <i class="material-icons">content_paste</i>
             <p>{{ __('Table List') }}</p>
         </a>
-      </li>
+      </li> --}}
       {{-- <li class="nav-item{{ $activePage == 'typography' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('typography') }}">
           <i class="material-icons">library_books</i>

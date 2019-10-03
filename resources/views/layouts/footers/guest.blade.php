@@ -3,25 +3,25 @@
         <nav class="float-left">
         <ul>
             <li>
-            <a href="https://www.creative-tim.com">
-                {{ __('Creative Tim') }}
+            <a href="//linkdigital.co">
+                {{ __('Link Digital') }}
             </a>
             </li>
             <li>
-            <a href="https://creative-tim.com/presentation">
+            <a href="//linkdigital.co/">
                 {{ __('About Us') }}
             </a>
             </li>
-            <li>
-            <a href="http://blog.creative-tim.com">
+            {{-- <li>
+            <a href="//linkdigital.co/">
                 {{ __('Blog') }}
             </a>
             </li>
             <li>
-            <a href="https://www.creative-tim.com/license">
+            <a href="//linkdigital.co/">
                 {{ __('Licenses') }}
             </a>
-            </li>
+            </li> --}}
         </ul>
         </nav>
         <div class="copyright float-right">
@@ -29,7 +29,7 @@
         <script>
             document.write(new Date().getFullYear())
         </script>, made with <i class="material-icons">favorite</i> by
-        <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> and <a href="https://www.updivision.com" target="_blank">UPDIVISION</a> for a better web.
+        <a href="//www.linkdigiral.co" target="_blank">Link Digital</a> for a better web.
         </div>
     </div>
 </footer>

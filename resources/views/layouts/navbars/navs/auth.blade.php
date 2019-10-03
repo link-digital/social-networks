@@ -13,9 +13,9 @@
     <div class="collapse navbar-collapse justify-content-end">
       <form class="navbar-form">
         <div class="input-group no-border">
-        <input type="text" value="" class="form-control" placeholder="Search...">
+        {{-- <input type="text" value="" class="form-control" placeholder="Search..."> --}}
         <button type="submit" class="btn btn-white btn-round btn-just-icon">
-          <i class="material-icons">search</i>
+          {{-- <i class="material-icons">search</i> --}}
           <div class="ripple-container"></div>
         </button>
         </div>
@@ -29,7 +29,7 @@
             </p>
           </a>
         </li>
-        <li class="nav-item dropdown">
+        {{-- <li class="nav-item dropdown">
           <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="material-icons">notifications</i>
             <span class="notification">5</span>
@@ -44,9 +44,9 @@
             <a class="dropdown-item" href="#">{{ __('Another Notification') }}</a>
             <a class="dropdown-item" href="#">{{ __('Another One') }}</a>
           </div>
-        </li>
+        </li> --}}
         <li class="nav-item dropdown">
-          <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link" href="##" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="material-icons">person</i>
             <p class="d-lg-none d-md-block">
               {{ __('Account') }}

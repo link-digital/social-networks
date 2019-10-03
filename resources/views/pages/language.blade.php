@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" href="{{ asset('material') }}/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-      {{ __('Material Dashboard by Creative Tim') }}
+      {{ __('Social Networks Link Digital') }}
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -113,7 +113,7 @@
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="#pablo">داشبورد</a>
+            <a class="navbar-brand" href="##">داشبورد</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false"
             aria-label="Toggle navigation">
@@ -134,7 +134,7 @@
             </form>
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="#pablo">
+                <a class="nav-link" href="##">
                   <i class="material-icons">dashboard</i>
                   <p class="d-lg-none d-md-block">
                     آمارها
@@ -158,7 +158,7 @@
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#pablo">
+                <a class="nav-link" href="##">
                   <i class="material-icons">person</i>
                   <p class="d-lg-none d-md-block">
                     حساب کاربری
@@ -187,10 +187,10 @@
                 <div class="card-footer">
                   <div class="stats">
                     <i class="material-icons text-danger">warning</i>
-                    <a href="#pablo">فضای بیشتری داشته باشید...</a>
+                    <a href="##">فضای بیشتری داشته باشید...</a>
                   </div>
                 </div>
-              </div>
+              </div>collapse navbar-collapse justify-content-end
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
               <div class="card card-stats">
@@ -622,7 +622,7 @@
             <div class="col-lg-6 col-md-12">
               <div class="card card-profile">
                 <div class="card-avatar">
-                  <a href="#pablo">
+                  <a href="##">
                     <img class="img" src="{{ asset('material') }}/img/faces/marc.jpg" />
                   </a>
                 </div>
@@ -632,7 +632,7 @@
                   <p class="card-description">
                       طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند ...
                   </p>
-                  <a href="#pablo" class="btn btn-primary btn-round">دنبال‌کردن</a>
+                  <a href="##" class="btn btn-primary btn-round">دنبال‌کردن</a>
                 </div>
               </div>
 

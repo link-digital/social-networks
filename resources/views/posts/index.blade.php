@@ -53,7 +53,7 @@
                 <div class="card-body">
                 <div class="tab-content">
                     <div class="tab-pane active" id="ranking">
-                    <table class="table">
+                    {{-- <table class="table">
                         <tbody>
                         <tr>
                             <td>
@@ -141,10 +141,10 @@
                             </td>
                         </tr>
                         </tbody>
-                    </table>
+                    </table> --}}
                     </div>
                     <div class="tab-pane" id="posts">
-                    <table class="table">
+                    {{-- <table class="table">
                         <tbody>
                         <tr>
                             <td>
@@ -190,10 +190,10 @@
                             </td>
                         </tr>
                         </tbody>
-                    </table>
+                    </table> --}}
                     </div>
                     <div class="tab-pane" id="comments">
-                    <table class="table">
+                    {{-- <table class="table">
                         <tbody>
                         <tr>
                             <td>
@@ -260,10 +260,10 @@
                             </td>
                         </tr>
                         </tbody>
-                    </table>
+                    </table> --}}
                     </div>
                     <div class="tab-pane" id="followers">
-                    <table class="table">
+                    {{-- <table class="table">
                         <tbody>
                         <tr>
                             <td>
@@ -330,10 +330,10 @@
                             </td>
                         </tr>
                         </tbody>
-                    </table>
+                    </table> --}}
                     </div>
                     <div class="tab-pane" id="reactions">
-                    <table class="table">
+                    {{-- <table class="table">
                         <tbody>
                         <tr>
                             <td>
@@ -400,7 +400,7 @@
                             </td>
                         </tr>
                         </tbody>
-                    </table>
+                    </table> --}}
                     </div>
                 </div>
                 </div>
@@ -458,7 +458,7 @@
                 <div class="card-body">
                 <div class="tab-content">
                     <div class="tab-pane active" id="ranking">
-                    <table class="table">
+                    {{-- <table class="table">
                         <tbody>
                         <tr>
                             <td>
@@ -546,10 +546,10 @@
                             </td>
                         </tr>
                         </tbody>
-                    </table>
+                    </table> --}}
                     </div>
                     <div class="tab-pane" id="posts">
-                    <table class="table">
+                    {{-- <table class="table">
                         <tbody>
                         <tr>
                             <td>
@@ -595,10 +595,10 @@
                             </td>
                         </tr>
                         </tbody>
-                    </table>
+                    </table> --}}
                     </div>
                     <div class="tab-pane" id="comments">
-                    <table class="table">
+                    {{-- <table class="table">
                         <tbody>
                         <tr>
                             <td>
@@ -665,10 +665,10 @@
                             </td>
                         </tr>
                         </tbody>
-                    </table>
+                    </table> --}}
                     </div>
                     <div class="tab-pane" id="followers">
-                    <table class="table">
+                    {{-- <table class="table">
                         <tbody>
                         <tr>
                             <td>
@@ -735,10 +735,10 @@
                             </td>
                         </tr>
                         </tbody>
-                    </table>
+                    </table> --}}
                     </div>
                     <div class="tab-pane" id="reactions">
-                    <table class="table">
+                    {{-- <table class="table">
                         <tbody>
                         <tr>
                             <td>
@@ -805,7 +805,7 @@
                             </td>
                         </tr>
                         </tbody>
-                    </table>
+                    </table> --}}
                     </div>
                 </div>
                 </div>

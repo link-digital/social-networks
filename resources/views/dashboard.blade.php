@@ -20,7 +20,7 @@
             <div class="card-footer">
               <div class="stats">
                 <i class="material-icons text-danger">warning</i>
-                <a href="#pablo">Get More Space...</a>
+                {{-- <a href="##">Get More Space...</a> --}}
               </div>
             </div>
           </div>
@@ -29,14 +29,14 @@
           <div class="card card-stats">
             <div class="card-header card-header-success card-header-icon">
               <div class="card-icon">
-                <i class="material-icons">store</i>
+                {{-- <i class="material-icons">store</i> --}}
               </div>
               <p class="card-category">Total Comments</p>
               <h3 class="card-title">{{ $data->CervezaAguila['comments'] }}</h3>
             </div>
             <div class="card-footer">
               <div class="stats">
-                <i class="material-icons">date_range</i> Last 24 Hours
+                {{-- <i class="material-icons">date_range</i> Last 24 Hours --}}
               </div>
             </div>
           </div>
@@ -45,14 +45,14 @@
           <div class="card card-stats">
             <div class="card-header card-header-danger card-header-icon">
               <div class="card-icon">
-                <i class="material-icons">info_outline</i>
+                {{-- <i class="material-icons">info_outline</i> --}}
               </div>
               <p class="card-category">Total Followers</p>
               <h3 class="card-title">{{ $data->CervezaAguila['user_interactions'] }}</h3>
             </div>
             <div class="card-footer">
               <div class="stats">
-                <i class="material-icons">local_offer</i> Tracked from Github
+                {{-- <i class="material-icons">local_offer</i> Tracked from Github --}}
               </div>
             </div>
           </div>
@@ -61,14 +61,14 @@
           <div class="card card-stats">
             <div class="card-header card-header-danger card-header-icon">
               <div class="card-icon">
-                <i class="material-icons">info_outline</i>
+                {{-- <i class="material-icons">info_outline</i> --}}
               </div>
               <p class="card-category">Total Reactions</p>
               <h3 class="card-title">{{ $data->CervezaAguila['reactions'] }}</h3>
             </div>
             <div class="card-footer">
               <div class="stats">
-                <i class="material-icons">local_offer</i> Tracked from Github
+                {{-- <i class="material-icons">local_offer</i> Tracked from Github --}}
               </div>
             </div>
           </div>
@@ -84,7 +84,7 @@
             </div>
             <div class="card-footer">
               <div class="stats">
-                <i class="material-icons">update</i> Just Updated
+                {{-- <i class="material-icons">update</i> Just Updated --}}
               </div>
             </div>
           </div>
@@ -144,7 +144,7 @@
             <div class="card-footer">
               <div class="stats">
                 <i class="material-icons text-danger">warning</i>
-                <a href="#pablo">Get More Space...</a>
+                {{-- <a href="##">Get More Space...</a> --}}
               </div>
             </div>
           </div>
@@ -160,7 +160,7 @@
             </div>
             <div class="card-footer">
               <div class="stats">
-                <i class="material-icons">date_range</i> Last 24 Hours
+                {{-- <i class="material-icons">date_range</i> Last 24 Hours --}}
               </div>
             </div>
           </div>
@@ -169,14 +169,14 @@
           <div class="card card-stats">
             <div class="card-header card-header-danger card-header-icon">
               <div class="card-icon">
-                <i class="material-icons">info_outline</i>
+                {{-- <i class="material-icons">info_outline</i> --}}
               </div>
               <p class="card-category">Total Followers</p>
               <h3 class="card-title">{{ $data->FCF['user_interactions'] }}</h3>
             </div>
             <div class="card-footer">
               <div class="stats">
-                <i class="material-icons">local_offer</i> Tracked from Github
+                {{-- <i class="material-icons">local_offer</i> Tracked from Github --}}
               </div>
             </div>
           </div>
@@ -192,7 +192,7 @@
             </div>
             <div class="card-footer">
               <div class="stats">
-                <i class="material-icons">local_offer</i> Tracked from Github
+                {{-- <i class="material-icons">local_offer</i> Tracked from Github --}}
               </div>
             </div>
           </div>
@@ -208,7 +208,7 @@
             </div>
             <div class="card-footer">
               <div class="stats">
-                <i class="material-icons">update</i> Just Updated
+                {{-- <i class="material-icons">update</i> Just Updated --}}
               </div>
             </div>
           </div>
