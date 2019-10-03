@@ -32,8 +32,9 @@ Route::get('/shares/{network_id}/{account}','ShareController@indexNetwork')->nam
 
 Route::get('/followers/import','FollowerController@import')->name('follower.import');
 Route::get('/followers/ranking','FollowerController@ranking')->name('follower.ranking');
-Route::get('/followers/{network_id}/{account}','FollowerController@indexNetwork')->name('follower.indexNetwork');
+Route::get('/followers/data/{network_id}/{account}','FollowerController@indexNetwork')->name('follower.indexNetwork');
 Route::get('/followers/ranking/{network_id}/{account}','FollowerController@ranking')->name('follower.ranking');
+
 
 Route::get('/posts/{network_id}/{account}','PostController@indexNetwork')->name('posts.indexNetwork');
 Route::get('/reactions/{network_id}/{account}','ReactionController@indexNetwork')->name('reactions.indexNetwork');

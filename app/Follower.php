@@ -20,7 +20,6 @@ class Follower extends Model
      */
     public function getComments( $network_id = false, $account = false)
     {
-        
         if( !$account && !$network_id ) {
             return $this->hasMany('App\Comment');
         }else{

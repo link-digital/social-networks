@@ -7,8 +7,7 @@
   <div class="logo">
       
     <a href="https://linkdigital.co/" class="simple-text logo-normal">
-      {{ __('Link Digital') }} 
-      <i><img style="width:25px" src="{{ asset('material') }}/img/id-05.png"></i>
+      <i><img style="width: 180px;" src="{{ asset('material') }}/img/id-05.png"></i>
     </a>
   </div>
   <div class="sidebar-wrapper">
