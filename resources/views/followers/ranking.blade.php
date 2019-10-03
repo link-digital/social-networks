@@ -25,7 +25,7 @@
                         </thead>
                         <tbody>
                         @foreach ( $results as $key => $result )
-                            <tr>
+                        <tr style="{{ $result->winner ? 'background: #00bcd4;':''}}">
                                 <th>{{ $rank++ }}</th> 
                                 <th><a href="/followers/{{$result->follower_id}}/edit">{{$result->name}}</a></th>
                                 <th>{{$result->comments_points }}</th>
